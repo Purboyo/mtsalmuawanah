@@ -19,7 +19,7 @@
     <div class="p5ra py-5 bg-light">
       <div class="container">
         <div class="title-container text-center">
-          <h2 class="fw-bold">P5RA: Pendidikan, Penelitian, Pengabdian, dan Aset</h2>
+          <h2 class="fw-bold">P5RA:  Proyek Penguatan Profil Pelajar Pancasila dan Rahmatan Lil'alaamin</h2>
         </div>
         <div class="text-center">
           <p class="text-muted mt-2">Menjelajahi berbagai aspek dari P5RA yang menjadi bagian integral dari institusi kami.</p>

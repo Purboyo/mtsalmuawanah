@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Visi extends Model
 {
     use HasFactory;
-    protected $table = 'visi';
-    protected $fillable = [
-        'Visi',
+    public $table = 'visi';
+    public $fillable = [
+        'id',               
+        'visi',
     ];
 }

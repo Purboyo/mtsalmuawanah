@@ -42,11 +42,11 @@
         </li>
         {{-- Dropdown Profil --}}
         <li class="nav-item dropdown">
-          <a class="nav-link fw-bold dropdown-toggle {{ Request::is('sejarah', 'strukturorganisasi', 'fasilitasmadrasah') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link fw-bold dropdown-toggle {{ Request::is('sejarahalmuawanah', 'strukturorganisasi', 'fasilitasmadrasah') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profil
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="sejarah">Sejarah</a></li>
+            <li><a class="dropdown-item" href="sejarahalmuawanah">Sejarah</a></li>
             <li><a class="dropdown-item" href="strukturorganisasi">Struktur Organisasi</a></li>
             <li><a class="dropdown-item" href="fasilitasmadrasah">Fasilitas</a></li>
           </ul>
@@ -153,7 +153,7 @@
                   Gabung
                 </button>
               </div>
-              <div class="social-links mt-4">
+              {{-- <div class="social-links mt-4">
                 <a href="" class="mx-2">
                   <i class="fab fa-facebook fa-2x"></i>
                 </a>
@@ -169,7 +169,7 @@
                 <a href="" class="mx-2">
                   <i class="fab fa-linkedin fa-2x"></i>
                 </a>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

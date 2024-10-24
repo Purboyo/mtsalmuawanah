@@ -31,50 +31,26 @@
           dolorem molestias mollitia?
         </p>
         <div class="row mt-5">
-            <!-- Osis -->
+          @foreach ($organisasis as $organisasi)
           <div class="col-md-6 mt-4" data-aos="fade-right">
             <div class="card border-0 shadow shadow-sm">
               <div class="card-body organisasi-item p-5">
                 <img
-                  src="assets/img/Osis.jpeg"
-                  alt=""
+                  src="{{ asset('image/organisasi/'. $organisasi->image) }}"
+                  alt="Nama Organisasi"
                   class="img-organisasi float-start rounded-circle me-3"
                 />
-                <strong class="d-block">Osis</strong>
-                <small class="text-muted">Organisasi Intra Sekolah</small>
+                <strong class="d-block">{{$organisasi->nama}}</strong>
+                <small class="text-muted">{{$organisasi->sub_nama}}</small>
                 <p class="fst-itali mt-3 fs-5">
-                  <i class="fa-solid fa-quote-left"></i> Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Ut quis praesentium sed
-                  eligendi eveniet aliquid debitis nemo dolores enim incidunt!
-                  Quaerat consequatur illum totam eligendi earum autem cumque
-                  facere nisi.
+                  <i class="fa-solid fa-quote-left"></i>
+                  {{$organisasi->konten}}
                   <i class="fa-solid fa-quote-right"></i>
                 </p>
               </div>
             </div>
           </div>
-          <!-- Pramuka -->
-          <div class="col-md-6 mt-4" data-aos="fade-left">
-            <div class="card border-0 shadow shadow-sm">
-              <div class="card-body organisasi-item p-5">
-                <img
-                  src="assets/img/Pramuka.jpeg"
-                  alt=""
-                  class="img-organisasi float-start rounded-circle me-3"
-                />
-                <strong class="d-block">Pramuka</strong>
-                <small class="text-muted">Praja Muda Karana</small>
-                <p class="fst-itali mt-3 fs-5">
-                  <i class="fa-solid fa-quote-left"></i> Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Ut quis praesentium sed
-                  eligendi eveniet aliquid debitis nemo dolores enim incidunt!
-                  Quaerat consequatur illum totam eligendi earum autem cumque
-                  facere nisi.
-                  <i class="fa-solid fa-quote-right"></i>
-                </p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -93,49 +69,25 @@
           dolorem molestias mollitia?
         </p>
         <div class="row mt-5">
-            <!-- Catur -->
+          @foreach ($ekstrakurikulers as $ekstrakurikuler)
           <div class="col-md-6 mt-4" data-aos="fade-right">
             <div class="card border-0 shadow shadow-sm">
               <div class="card-body organisasi-item p-5">
                 <img
-                  src="assets/img/Catur.jpeg"
-                  alt=""
-                  class="img-organisasi float-start rounded-circle me-3"
+                src="{{ asset('image/ekstrakurikuler/'. $ekstrakurikuler->image) }}"
+                alt=""
+                class="img-organisasi float-start rounded-circle me-3"
                 />
-                <strong class="d-block">Catur</strong>
-                <small class="text-muted">Catur Alka</small>
+                <strong class="d-block">{{$ekstrakurikuler->nama}}</strong>
+                <small class="text-muted">{{$ekstrakurikuler->sub_nama}}</small>
                 <p class="fst-itali mt-3 fs-5">
-                  <i class="fa-solid fa-quote-left"></i> Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Ut quis praesentium sed
-                  eligendi eveniet aliquid debitis nemo dolores enim incidunt!
-                  Quaerat consequatur illum totam eligendi earum autem cumque
-                  facere nisi.
+                  <i class="fa-solid fa-quote-left"></i>{{$ekstrakurikuler->konten}}
                   <i class="fa-solid fa-quote-right"></i>
                 </p>
               </div>
             </div>
           </div>
-          <!-- Paskibra -->
-          <div class="col-md-6 mt-4" data-aos="fade-left">
-            <div class="card border-0 shadow shadow-sm">
-              <div class="card-body organisasi-item p-5">
-                <img
-                  src="assets/img/Paskibra.jpeg"
-                  alt=""
-                  class="img-organisasi float-start rounded-circle me-3"
-                />
-                <strong class="d-block">Paskibra</strong>
-                <small class="text-muted">Paskibra</small>
-                <p class="fst-itali mt-3 fs-5">
-                  <i class="fa-solid fa-quote-left"></i> Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Ut quis praesentium sed
-                  eligendi eveniet aliquid debitis nemo dolores enim incidunt!
-                  Quaerat consequatur illum totam eligendi earum autem cumque
-                  facere nisi.
-                  <i class="fa-solid fa-quote-right"></i>
-                </p>
-              </div>
-            </div>
+          @endforeach
           </div>
         </div>
       </div>

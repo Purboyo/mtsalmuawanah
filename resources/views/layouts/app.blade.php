@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -64,8 +60,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-                <a href="/dashboard" class="nav-link">
+            <li class="nav-item @if(in_array($currentSegment, ['dashboard'])) menu-open @else menu-close @endif">
+                <a href="/dashboard" class="nav-link ">
                     <i class="nav-icon fa-solid fa-circle-info"></i>
                     <p>
                     Dashboard
@@ -82,8 +78,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
 
             {{-- Beranda --}}
-            <li class="nav-item @if(in_array($currentSegment, ['sliders', 'sambutan', 'statistik'])) menu-open @else menu-close @endif">
-                <a href="#" class="nav-link @if(in_array($currentSegment, ['sliders', 'sambutan', 'statistik'])) @endif">
+            <li class="nav-item @if(in_array($currentSegment, ['sliders', 'sambutan', 'statistik', 'beranda'])) menu-open @else menu-close @endif">
+                <a href="{{route('beranda.index')}}" class="nav-link @if(in_array($currentSegment, ['sliders', 'sambutan', 'statistik'])) @endif">
                     <i class="nav-icon fa-solid fa-house"></i>
                     <p>
                         Data Beranda
@@ -109,13 +105,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <p>Data Statistik</p>
                         </a>
                     </li>
+                    {{-- <li class="nav-item">
+                        <a href="{{route('beranda.index')}}" class="nav-link @if($currentSegment == 'beranda') active @endif">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Data Beranda</p>
+                        </a>
+                    </li> --}}
                 </ul>
             </li>
 
 
           {{-- Profil --}}
-          <li class="nav-item @if(in_array($currentSegment, ['struktur', 'fasilitas', 'visimisi'])) menu-open @else menu-close @endif">
-            <a href="#" class="nav-link @if(in_array($currentSegment, ['struktur', 'fasilitas', 'visimisi'])) @endif">
+          <li class="nav-item @if(in_array($currentSegment, ['struktur', 'fasilitas', 'visimisi', 'profil', 'sejarah','deskripsi'])) menu-open @else menu-close @endif">
+            <a href="#" class="nav-link @if(in_array($currentSegment, ['struktur', 'fasilitas', 'visimisi', 'profil', 'sejarah','deskripsi'])) @endif">
                 <i class="nav-icon fa-solid fa-landmark"></i>
                 <p>
                 Data Profil
@@ -124,19 +126,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{route('sejarah.index')}}" class="nav-link  @if($currentSegment == 'sejarah') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Sejarah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{route('deskripsi.index')}}" class="nav-link @if($currentSegment == 'deskripsi') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Deskripsi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{route('profil.index')}}" class="nav-link @if($currentSegment == 'profil') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Profil</p>
                 </a>
@@ -187,8 +189,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 
           {{-- Pendidikan --}}
-          <li class="nav-item @if(in_array($currentSegment, ['Prestasi', '', ''])) menu-open @else menu-close @endif">
-            <a href="#" class="nav-link @if(in_array($currentSegment, ['Prestasi', '', ''])) @endif">
+          <li class="nav-item @if(in_array($currentSegment, ['Prestasi', 'P5ra', 'Organisasi', 'Ekstrakurikuler'])) menu-open @else menu-close @endif">
+            <a href="#" class="nav-link @if(in_array($currentSegment, ['Prestasi', 'P5ra', 'Organisasi', 'Ekstrakurikuler'])) @endif">
                 <i class="nav-icon fa-solid fa-chalkboard-user"></i>
                 <p>
                 Data Pendidikan
@@ -203,28 +205,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{route('P5ra.index')}}" class="nav-link @if($currentSegment == 'P5ra') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data P5RA</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{route('Organisasi.index')}}" class="nav-link @if($currentSegment == 'Organisasi') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Organisasi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{route('Ekstrakurikuler.index')}}" class="nav-link @if($currentSegment == 'Ekstrakurikuler') active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data EkstaKuriKuler</p>
+                  <p>Data EkstraKuriKuler</p>
                 </a>
               </li>
             </ul>
           </li>
           {{-- Berita --}}
-          <li class="nav-item">
-            <a href="" class="nav-link">
+          <li class="nav-item @if(in_array($currentSegment, ['dashboard'])) menu-open @else menu-close @endif">
+            <a href="{{route('Berita.index')}}" class="nav-link">
                 <i class="nav-icon fa-regular fa-newspaper"></i>
               <p>
                 Berita

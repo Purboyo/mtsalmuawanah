@@ -1,51 +1,38 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Visi dan Misi')
+@section('title', 'Visi dan Misi')
 
 @section('content')
-<div class="container">
-    <a href="{{ route('visimisi.index') }}" class="btn btn-success mb-3">Kembali</a>
-    <div class="col-lg-12">
-        <div class="card card-outline card-primary">
-            <div class="card-header">
-                <h5 class="m-0">Edit Visi dan Misi</h5>
-            </div>
-            <div class="card-body">
-                <form action="{{ route('visimisi.update', $visi->id) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <!-- Edit Visi -->
-                    <div class="form-group">
-                        <label for="visi" class="form-label">Visi</label>
-                        <input type="text" class="form-control" id="visi" name="visi" placeholder="Masukkan Visi" value="{{ $visi->visi }}">
-                        @error('visi')
-                        <small style="color: red">{{ $message }}</small>
-                        @enderror
-                    </div>
-
-                    <!-- Tombol Simpan -->
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Simpan Perubahan</button>
-                        <a href="{{ route('visimisi.index') }}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Kembali</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
-
-
-
-
-                {{-- <!-- Section for Misi -->
-                <div class="mb-4 ml-3 align-items-center">
-                    <h5 class="text-bold">Misi:</h5>
-                    <ul>
-                        <li>Menyelenggarakan pendidikan berkualitas yang berlandaskan nilai-nilai keagamaan.</li>
-                        <li>Mengembangkan potensi peserta didik dalam bidang akademik, seni, dan olahraga.</li>
-                        <li>Mempersiapkan peserta didik untuk berperan aktif dalam kehidupan masyarakat yang dinamis.</li>
-                        <li>Mendorong siswa untuk memiliki keterampilan berpikir kritis, kreatif, dan kolaboratif.</li>
-                    </ul>
+<div class="container mt-2">
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show">
+                    <strong>Berhasil</strong>
+                    <p>{{ $message }}</p>
                 </div>
-            </div> --}}
+                @endif
+
+                <div class="card-body">
+                    <!-- Section for Visi -->
+                    <h5 class="text-bold">Visi:</h5>
+                    @foreach ($visis as $visi)
+                    <p>{{ $visi->visi }}</p>
+                        <div class="mt-4">
+                        <a href="{{ route('visimisi.edit', $visi->id) }}" class="btn btn-warning">
+                            <i class="fas fa-edit"></i> Edit Visi
+                        </a>
+                    </div>
+                    @endforeach
+
+                    <!-- Section for Misi -->
+                    <h5 class="text-bold mt-4">Misi:</h5>
+                    @foreach ($misi as $m)
+                        <p>- {{ $m->misi }}</p>
+                    @endforeach
+                    <div class="mt-4">
+                        <a href="{{ route('visimisi.create') }}" class="btn btn-warning">
+                            <i class="fas fa-edit"></i> Edit Misi
+                        </a>
+                    </div>
+                </div>
+            </div>
+@endsection

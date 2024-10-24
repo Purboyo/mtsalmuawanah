@@ -9,26 +9,20 @@ use Illuminate\Support\Facades\File;
 
 class SlidersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $sliders = Slider::all();
         return view('Admin.Beranda.sliders.index', compact('sliders'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         return view('Admin.Beranda.sliders.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -40,7 +34,7 @@ class SlidersController extends Controller
         $input = $request->all();
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $imageName ='Slider_'. date('YmdHis') . '_' . Str::random(8) . '.' . $image->getClientOriginalExtension();
+            $imageName = 'Slider_' . date('YmdHis') . '_' . Str::random(8) . '.' . $image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
             $input['image'] = "$imageName";
         }
@@ -50,17 +44,12 @@ class SlidersController extends Controller
         return redirect('/sliders')->with('success', 'Slider Berhasil Ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Slider $slider)
     {
         return view('Admin.Beranda.sliders.edit', compact('slider'));
@@ -77,14 +66,14 @@ class SlidersController extends Controller
         $input = $request->all();
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $imageName = 'Slider_'. date('YmdHis') . '_' . Str::random(8) . '.' . $image->getClientOriginalExtension();
+            $imageName = 'Slider_' . date('YmdHis') . '_' . Str::random(8) . '.' . $image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
             $input['image'] = "$imageName";
-        }else{
+        } else {
             unset($input['image']);
         }
 
-        $slider ->update($input);
+        $slider->update($input);
         return redirect('/sliders')->with('success', 'Slider Berhasil Diubah');
     }
 
@@ -92,15 +81,15 @@ class SlidersController extends Controller
     {
         // Path lengkap file gambar
         $imagePath = public_path('image/') . $slider->image;
-    
+
         // Cek apakah file tersebut ada dan hapus
         if (File::exists($imagePath)) {
             File::delete($imagePath);
         }
-    
+
         // Hapus data slider dari database
         $slider->delete();
-    
+
         return redirect('/sliders')->with('success', 'Slider Berhasil Dihapus');
     }
 }

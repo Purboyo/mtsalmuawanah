@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AddPPDB;
+use App\Models\Berita;
+use App\Models\Deskripsi;
+use App\Models\Ekstrakurikuler;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Sambutan;
@@ -12,7 +15,12 @@ use App\Models\Fasilitas;
 use App\Models\Listppdb;
 use App\Models\PPDB;
 use App\Models\Prestasi;
-
+use App\Models\Profil;
+use App\Models\Visi;
+use App\Models\Misi;
+use App\Models\Organisasi;
+use App\Models\p5ra;
+use App\Models\Sejarah;
 
 class HomeController extends Controller
 {
@@ -21,7 +29,10 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $sambutans = Sambutan::first();
         $statistiks = Statistik::first();
-        return view('home.index', compact('sliders','sambutans','statistiks'));
+        $visis = Visi::first();
+        $profils = Profil::first();
+        $misis = Misi::all();
+        return view('home.index', compact('sliders','sambutans','statistiks', 'visis', 'profils', 'misis'));
     }
 
     public function contact()
@@ -36,17 +47,25 @@ class HomeController extends Controller
 
     public function berita()
     {
-        return view('home.berita');
+        $beritas = Berita::all();
+        return view('home.berita', compact('beritas'));
     }
 
     public function organisasi()
     {
-        return view('home.organisasi');
+        $organisasis =Organisasi::all();
+        $ekstrakurikulers = Ekstrakurikuler::all();
+        return view('home.organisasi', compact('organisasis', 'ekstrakurikulers'));
     }
 
     public function sejarah()
     {
-        return view('home.sejarah');
+        $visis = Visi::first();
+        $profils = Profil::first();
+        $misis = Misi::all();
+        $deskripsis = Deskripsi::first();
+        $sejarahs = Sejarah::first();
+        return view('home.sejarah', compact('visis', 'profils','misis', 'deskripsis','sejarahs'));
     }
 
     public function struktur()
@@ -63,7 +82,8 @@ class HomeController extends Controller
 
     public function p5ra()
     {
-        return view('home.p5ra'); 
+        $p5ras = p5ra::all();
+        return view('home.p5ra', compact('p5ras')); 
     }
 
     public function ppdb()
@@ -78,5 +98,10 @@ class HomeController extends Controller
     {
         $prestasis = Prestasi::all();
         return view('home.prestasi', compact('prestasis')); 
+    }
+
+    public function detailberita($id){
+        $berita = Berita::find($id);
+        return view('home.detailberita', compact('berita'));
     }
 }
