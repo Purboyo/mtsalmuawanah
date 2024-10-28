@@ -37,6 +37,22 @@
                     <small style="color: red">{{ $message }}</small>
                     @enderror
                 </div>
+                {{-- edit Status --}}
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <input type="text" class="form-control" id="status" name="status" placeholder="Masukkan Judul" value="{{ $ppdb->status }}">
+                    @error('status')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
+                </div>
+                {{-- edit Link --}}
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="text" class="form-control" id="link" name="link" placeholder="Masukkan Judul" value="{{ $ppdb->link }}">
+                    @error('link')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
+                </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block">Submit</button>
                 </div>

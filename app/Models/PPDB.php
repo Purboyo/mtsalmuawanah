@@ -13,5 +13,7 @@ class PPDB extends Model
         'title',
         'subtitle',
         'image',
+        'link',
+        'status',
     ];
 }

@@ -33,7 +33,7 @@ class SlidersController extends Controller
 
         $input = $request->all();
         if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
+            $destinationPath = 'image/slider/';
             $imageName = 'Slider_' . date('YmdHis') . '_' . Str::random(8) . '.' . $image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
             $input['image'] = "$imageName";
@@ -65,7 +65,7 @@ class SlidersController extends Controller
 
         $input = $request->all();
         if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
+            $destinationPath = 'image/slider/';
             $imageName = 'Slider_' . date('YmdHis') . '_' . Str::random(8) . '.' . $image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
             $input['image'] = "$imageName";

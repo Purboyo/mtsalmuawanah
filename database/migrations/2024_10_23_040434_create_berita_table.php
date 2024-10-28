@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('deskripsisingkat');
             $table->string('deskripsi');
             $table->string('image');
+            $table->string('link');
             $table->timestamps();
         });
     }

@@ -74,6 +74,9 @@
         <li class="nav-item">
           <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="contact">Kontak Kami</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="login">Login  <i class="fa fa-user"></i></a>
+        </li>
       </ul>
     </div>
   </div>

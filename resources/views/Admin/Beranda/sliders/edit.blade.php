@@ -30,7 +30,7 @@
                 @enderror
 
                 {{-- edit gambar --}}
-                <img src="/image/{{ $slider->image }}" class="img-fluid"></imf>
+                <img src="/image/slider/{{ $slider->image }}" class="img-fluid"></imf>
                 <div class="form-group">
                     <label for="title">Gambar</label>
                     <input type="file" class="form-control" id="image" name="image">

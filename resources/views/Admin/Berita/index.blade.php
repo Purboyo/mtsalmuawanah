@@ -25,6 +25,7 @@
                             </div>
                             <h5 class="card-title">{{ $item->judul }}</h5>
                             <p class="card-text">{{ Str::limit($item->deskripsisingkat,30) }}</p>
+                            <p>Link : <a href="{{ $item->link }}" target="_blank"><strong>{{ $item->link }}</strong></a></p>
                         </div>
                         <div class="card-footer d-flex justify-content-between">
                             <a href="{{ route('Berita.show', $item->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>

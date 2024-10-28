@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -31,7 +30,7 @@
       </div>
       @enderror
 
-      <form  method="post">
+      <form method="post">
         @csrf
         @error('email')
         <small style="color: red">{{$message}}</small>
@@ -58,12 +57,14 @@
         </div>
 
         <div class="row">
-          </div>
-          <!-- /.col -->
-          <div class="col-12">
+          <!-- Sign In button -->
+          <div class="col-12 mb-3">
             <button type="submit" class="btn btn-success btn-block">Sign In</button>
           </div>
-          <!-- /.col -->
+          <!-- Back button -->
+          <div class="col-12">
+            <a href="javascript:history.back()" class="btn btn-secondary btn-block">Kembali</a>
+          </div>
         </div>
       </form>
 

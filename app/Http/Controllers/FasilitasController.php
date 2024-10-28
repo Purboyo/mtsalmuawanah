@@ -47,8 +47,9 @@ class FasilitasController extends Controller
         //
     }
 
-    public function edit(Fasilitas $fasilita)
+    public function edit($id)
     {
+        $fasilita = Fasilitas::find($id);
         return view('Admin.Profil.fasilitas.edit', compact('fasilita'));
     }
 

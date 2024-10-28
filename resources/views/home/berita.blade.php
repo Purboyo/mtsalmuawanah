@@ -40,6 +40,9 @@
                     <p class="text-muted">
                       {{ implode(' ', array_slice(explode(' ', $berita->deskripsisingkat), 0, 100)) }}...
                     </p>
+                    <p >
+                      <small>Waktu terbit : {{ $berita->tanggal }}</small>
+                      </p>
                     <a href="{{ route('berita.detail', $berita->id) }}" class="btn btn-success mt-auto">Baca Selengkapnya</a>
                   </div>
                 </div>
@@ -58,6 +61,9 @@
                     <p class="text-muted">
                       {{ implode(' ', array_slice(explode(' ', $berita->deskripsisingkat), 0, 100)) }}...
                     </p>
+                    <p >
+                      <small>Waktu terbit : {{ $berita->tanggal }}</small>
+                      </p>
                     <a href="{{ route('berita.detail', $berita->id) }}" class="btn btn-success mt-auto">Baca Selengkapnya</a>
                   </div>
                 </div>

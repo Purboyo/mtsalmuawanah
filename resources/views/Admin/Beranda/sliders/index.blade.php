@@ -22,7 +22,7 @@
             @foreach ($sliders as $slider)
                 <div class="col mb-4" data-aos="fade-up">
                     <div class="card shadow-sm">
-                        <img src="{{ asset('image/' . $slider->image) }}" alt="{{ $slider->title }}" class="card-img-top">
+                        <img src="{{ asset('image/slider/' . $slider->image) }}" alt="{{ $slider->title }}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title fw-bold">{{ $slider->title }}</h5>
                             <p class="card-text">{{ Str::limit($slider->description, 70) }}</p>

@@ -24,6 +24,8 @@
                     <div class="col-md-8">
                         <h5 class="fw-bold">{{ $ppdb->title }}</h5>
                         <p class="text-muted">{!! nl2br(e($ppdb->subtitle)) !!}</p>
+                        <p>Status : <strong>{{ $ppdb->status }}</strong></p>
+                        <a href="{{$ppdb->link}}" class="btn btn-success mt-4">Daftar Sekarang</a>
                         <a href="{{ route('ppdb.edit', $ppdb->id) }}" class="btn btn-warning w-100 mt-2">Edit</a>
                     </div>
                 </div>

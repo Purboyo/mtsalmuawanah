@@ -35,10 +35,12 @@
                   <i class="fa fa-check-circle text-success"></i> {{ $list->list }}
               </li>
           @endforeach
+          <p>Status : <strong>{{ $ppdb->status }}</strong></p>
+
             </ul>
 
             <!-- Registration Link -->
-            <a href="" class="btn btn-success mt-4">Daftar Sekarang</a>
+            <a href="{{$ppdb->link}}" class="btn btn-success mt-4">Daftar Sekarang</a>
           </div>
         </div>
         @endforeach

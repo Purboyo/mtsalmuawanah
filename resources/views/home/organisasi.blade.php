@@ -25,10 +25,7 @@
           <h2 class="text-center fw-bold">Organisasi</h2>
         </div>
         <p class="text-center mt-4">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum at
-          consectetur, eligendi quibusdam inventore in ad temporibus soluta
-          libero autem distinctio, impedit qui ab repudiandae velit. Quis
-          dolorem molestias mollitia?
+
         </p>
         <div class="row mt-5">
           @foreach ($organisasis as $organisasi)
@@ -63,10 +60,7 @@
           <h2 class="text-center fw-bold">EkstrakuriKuler</h2>
         </div>
         <p class="text-center mt-4">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum at
-          consectetur, eligendi quibusdam inventore in ad temporibus soluta
-          libero autem distinctio, impedit qui ab repudiandae velit. Quis
-          dolorem molestias mollitia?
+
         </p>
         <div class="row mt-5">
           @foreach ($ekstrakurikulers as $ekstrakurikuler)

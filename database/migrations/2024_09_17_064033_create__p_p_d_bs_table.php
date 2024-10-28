@@ -16,9 +16,12 @@ return new class extends Migration
             $table->string('title');
             $table->text('subtitle');
             $table->string('image');
+            $table->string('link'); 
+            $table->string('status'); 
             $table->timestamps();
         });
     }
+    
 
     public function down(): void
     {

@@ -29,6 +29,8 @@ class PPDBController extends Controller
             'title' => 'required',
             'subtitle' => 'required',
             'image' => 'required|image',
+            'status' => 'required',
+            'link' => 'required',
         ]);
 
         $input = $request->all();
@@ -61,6 +63,8 @@ class PPDBController extends Controller
             'title' => 'required',
             'subtitle' => 'required',
             'image' => 'image',
+            'status' => 'required',
+            'link' => 'required',
         ]);
 
         $input = $request->all();
