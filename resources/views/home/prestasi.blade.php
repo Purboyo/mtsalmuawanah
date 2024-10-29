@@ -22,7 +22,6 @@
           <h2 class="fw-bold">Prestasi Kami</h2>
           </div>
           <div class="text-center">
-          <p class="text-muted mt-2">Sekolah kami telah meraih berbagai prestasi di tingkat nasional dan internasional. Berikut adalah beberapa di antaranya.</p>
         </div>
 
         <!-- Prestasi List -->

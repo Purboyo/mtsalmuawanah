@@ -34,7 +34,8 @@ class HomeController extends Controller
         $visis = Visi::first();
         $profils = Profil::first();
         $misis = Misi::all();
-        return view('home.index', compact('sliders','sambutans','statistiks', 'visis', 'profils', 'misis'));
+        $beritas = Berita::orderBy('updated_at', 'desc')->take(3)->get();
+        return view('home.index', compact('sliders','sambutans','statistiks', 'visis', 'profils', 'misis', 'beritas'));
     }
 
     public function contact()

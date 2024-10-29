@@ -65,6 +65,15 @@
                 @error('image')
                 <small style="color: red">{{ $message }}</small>
                 @enderror
+                
+                {{-- Link Berita --}}
+                <div class="form-group">
+                    <label for="link">Link Berita</label>
+                    <input type="text" class="form-control" id="link" name="link" value="{{ $berita->link }}" >
+                </div>
+                @error('link')
+                <small style="color: red">{{ $message }}</small>
+                @enderror
 
                 {{-- Submit --}}
                 <div class="form-group">

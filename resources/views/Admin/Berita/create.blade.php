@@ -61,6 +61,16 @@
                 <small style="color: red">{{ $message }}</small>
                 @enderror
 
+                {{-- Link --}}
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="text" class="form-control" id="link" name="link" placeholder="Masukan link Berita">
+                </div>
+                
+                @error('link')
+                <small style="color: red">{{ $message }}</small>
+                @enderror
+
                 {{-- Submit --}}
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block">Tambah Berita</button>

@@ -90,110 +90,56 @@
     </main>
 
 
-    <!-- Footer -->
-    <footer class="mt-5">
-      <div class="footer-top bg-dark text-white p-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3">
-              <h4 class="fw-bold">MADRASAH</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Adipisci maiores aspernatur dolore.
-              </p>
-              <strong>Telephone</strong> : <span>+628123456789</span>
-              <br />
-              <strong>Email</strong> : <span>EmailMadrasah@gmail.com</span>
-            </div>
-            <!-- Link -->
-            <div class="col-md-3 offset-md-1">
-              <h4 class="fw-bold">Useful Links</h4>
-              <ul class="list-group list-unstyled">
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Beranda
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Profil
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Layanan
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Berita
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Kontak Kami
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="col-md-4 offset-md-1">
-              <h4 class="fw-bold">Ayo Gabung Madrasah</h4>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et!
-              </p>
-              <div class="input-group">
-                <input
-                  type="Text"
-                  class="form-control"
-                  placeholder="Emailmu@contoh.com"
-                />
-                <button
-                  class="btn btn-gabung"
-                  type="button"
-                  id="inputGroupFileAddon04"
-                >
-                  Gabung
-                </button>
-              </div>
-            </div>
+<!-- Footer -->
+<footer class="mt-5">
+  <div class="footer-top bg-dark text-white p-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h4 class="fw-bold">MADRASAH</h4>
+          <p>Tsanawiyah Al-Mu'Awanah Kawunganten</p>
+          <strong>Telephone:</strong> <span>+628123456789</span><br>
+          <strong>Email:</strong> <span>EmailMadrasah@gmail.com</span>
+        </div>
+        <!-- Links Section -->
+        <div class="col-md-3 offset-md-1">
+          <h4 class="fw-bold">Useful Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="/" class="text-decoration-none"><i class="fa fa-chevron-right primary"></i> Beranda</a></li>
+            <li><a href="sejarahalmuawanah" class="text-decoration-none"><i class="fa fa-chevron-right primary"></i> Profil</a></li>
+            <li><a href="ppdbmtsalmuawanah" class="text-decoration-none"><i class="fa fa-chevron-right primary"></i> PPDB</a></li>
+            <li><a href="berita" class="text-decoration-none"><i class="fa fa-chevron-right primary"></i> Berita</a></li>
+            <li><a href="dokumentasi" class="text-decoration-none"><i class="fa fa-chevron-right primary"></i> Dokumentasi</a></li>
+            <li><a href="contact" class="text-decoration-none"><i class="fa fa-chevron-right primary"></i> Kontak Kami</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-down bg-darker text-white px-5 py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div>&copy; <strong>MTS Al-Mu'Awanah</strong>. All Rights Reserved</div>
+          <div>Designed by Purboyo Broto Umbaran</div>
+        </div>
+        <div class="col-md-6">
+          <div class="social-links float-end">
+            <a href="" class="mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="" class="mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="" class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="" class="mx-2"><i class="fab fa-whatsapp fa-2x"></i></a>
+            <a href="" class="mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
           </div>
         </div>
       </div>
-      
-      <div class="footer-down bg-darker text-white px-5 py-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="copyright">
-                &copy; Copyright <strong>MTS Al-Mu'Awanah</strong>. All Rights Reserved
-              </div>
-              <div class="credits">Designed by Purboyo Broto Umbaran</div>
-            </div>
-            <div class="col-md-6">
-              <div class="social-links float-end">
-                <a href="" class="mx-2">
-                  <i class="fab fa-facebook fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-twitter fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-instagram fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-whatsapp fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- end Footer -->
+    </div>
+  </div>
+</footer>
+<!-- end Footer -->
+
+
 
     <!-- to top -->
     <a href="#" class="back-to-top p-3">

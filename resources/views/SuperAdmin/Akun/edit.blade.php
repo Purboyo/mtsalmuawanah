@@ -32,6 +32,7 @@
         <div class="form-group mt-3">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password (biarkan kosong jika tidak ingin mengubah)">
+            <p>*biarkan kosong jika tidak ingin mengubah</p>
             @error('password')
                 <small style="color: red">{{ $message }}</small>
             @enderror
@@ -51,6 +52,7 @@
 
         <div class="form-group mt-3">
             <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+            <a href="{{ route('akun.index') }}" class="btn btn-secondary">Kembali</a>
         </div>
     </form>
 </div>

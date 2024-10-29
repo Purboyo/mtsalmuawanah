@@ -28,6 +28,7 @@ class BeritaController extends Controller
             'deskripsisingkat' => 'required',
             'deskripsi' => 'required',
             'image' => 'required|image',
+            'link' => 'required',
         ]);
         
         $input = $request->all();
@@ -66,6 +67,7 @@ class BeritaController extends Controller
             'deskripsisingkat' => 'required',
             'deskripsi' => 'required',
             'image' => 'nullable|image',
+            'link' => 'required',
         ]);
     
         $berita = Berita::findOrFail($id);

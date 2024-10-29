@@ -20,12 +20,12 @@
 <!-- Struktur Organisasi -->
 <div class="teams bg-light py-5">
   <div class="container">
-      <div class="title-container">
-          <h2 class="text-center fw-bold">Struktur Organisasi</h2>
+      <div class="title-container mb-5">
+          <h2 class="text-center fw-bold ">Struktur Organisasi</h2>
       </div>
-      <p class="text-center mt-4">
+      {{-- <p class="text-center mt-4">
         Struktur organisasi sekolah kami terdiri dari berbagai posisi yang saling mendukung untuk mencapai visi dan misi pendidikan. Setiap anggota tim memiliki peran yang penting dalam menciptakan lingkungan belajar yang efektif, termasuk kepala sekolah, guru, dan staf administrasi. Kami berkomitmen untuk memberikan pendidikan berkualitas dan membangun karakter siswa melalui kolaborasi yang erat di antara semua pihak.
-      </p>
+      </p> --}}
       <div class="row">
           @foreach($strukturs as $struktur)
               <div class="col-md-3 mb-4" data-aos="fade-up">

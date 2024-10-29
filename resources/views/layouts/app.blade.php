@@ -21,7 +21,6 @@
   <!-- Include Lightbox CSS -->
   <link href="/assets/vendor/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
 <body class="hold-transition sidebar-mini">

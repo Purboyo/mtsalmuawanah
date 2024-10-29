@@ -17,12 +17,10 @@
 
     <!-- Berita Section -->
     <div class="berita py-5">
-      <div class="container">
-        <div class="title-container text-center mb-4">
+      <div class="container ">
+        <div class="title-container text-center mb-5">
           <h2 class="fw-bold">Berita Terbaru</h2>
-          <p class="text-muted">Update terbaru dari kegiatan dan acara kami.</p>
-        </div>
-        
+        </div>        
         <!-- Grid for news items -->
         @foreach ($beritas as $index => $berita)
           <div class="row mb-5 align-items-stretch">
