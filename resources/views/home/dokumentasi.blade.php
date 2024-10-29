@@ -30,7 +30,7 @@
           libero autem distinctio, impedit qui ab repudiandae velit. Quis
           dolorem molestias mollitia?
         </p>
-        <div class="row mt-4">
+        {{-- <div class="row mt-4">
             <div class="col-md-12 d-flex justify-content-center">
               <ul class="list-unstyled d-flex portfolio-filter">
                 <li data-filter="*" class="py-2 px-4 filter-active text-white">All</li>
@@ -39,47 +39,26 @@
                 <li data-filter=".filter-pramuka" class="py-2 px-4">Pramuka</li>
               </ul>
             </div>
-          </div>
+          </div> --}}
           <div class="row mt-5">
             <div class="col-md-12">
               <div class="mansory portfolio-container" data-aos="zoom-in-up">
                 <div class="mansory-sizer"></div>
-                <div class="mansory-item m-2 portfolio-item filter-alam" >
-                  <img src="assets/img/p1.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-alam" >
-                  <img src="assets/img/p2.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-pramuka" >
-                  <img src="assets/img/p3.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-ekstrakurikuler" >
-                  <img src="assets/img/p4.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-alam" >
-                  <img src="assets/img/p5.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-alam" >
-                  <img src="assets/img/p6.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-alam" >
-                  <img src="assets/img/p7.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-ekstrakurikuler" >
-                  <img src="assets/img/p8.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-alam" >
-                  <img src="assets/img/p9.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-alam" >
-                  <img src="assets/img/p10.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-ekstrakurikuler" >
-                  <img src="assets/img/p11.jpg" alt="" class="img-fluid" />
-                </div>
-                <div class="mansory-item m-2 portfolio-item filter-ekstrakurikuler" >
-                  <img src="assets/img/p12.jpg" alt="" class="img-fluid" />
-                </div>
+                <div class="row">
+                  @foreach ($dokumentasi as $item)
+                      <div class="col-md-4 mansory-item m-2 portfolio-item filter-alam">
+                          <a href="{{ asset('image/dokumentasi/' . $item->image) }}" 
+                             data-lightbox="dokumentasi" 
+                             data-title="{{ $item->nama }}">
+                              <img src="{{ asset('image/dokumentasi/' . $item->image) }}" 
+                                   alt="{{ $item->nama }}" 
+                                   class="img-fluid" 
+                                   style="max-height: 300px; width: 100%; object-fit: cover;">{{$item->nama}}
+                          </a>
+                      </div>
+                  @endforeach
+              </div>
+              
               </div>
             </div>
           </div>

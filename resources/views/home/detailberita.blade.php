@@ -14,7 +14,7 @@
             </div>
           </div>
           <!-- End Breadcumbs -->
-    <a href="{{ route('Berita.index') }}" class="btn btn-success mb-3">Kembali</a>
+    <a href="/berita" class="btn btn-success mb-3">Kembali</a>
 
     <div class="row">
         <div class="col-md-12">
@@ -24,7 +24,7 @@
                     <h2>{{ $berita->judul }}</h2>
 
                     {{-- Tanggal Terbit --}}
-                    <p class="text-muted">Diterbitkan pada: {{ \Carbon\Carbon::parse($berita->tanggal)->format('d M Y') }}</p>
+                    <p class="text-muted">Diterbitkan pada: {{ $berita->tanggal}}</p>
 
                     {{-- Gambar Berita --}}
                     @if($berita->image)

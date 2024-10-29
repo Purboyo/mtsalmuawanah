@@ -156,23 +156,6 @@
                   Gabung
                 </button>
               </div>
-              {{-- <div class="social-links mt-4">
-                <a href="" class="mx-2">
-                  <i class="fab fa-facebook fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-twitter fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-instagram fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-whatsapp fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-              </div> --}}
             </div>
           </div>
         </div>

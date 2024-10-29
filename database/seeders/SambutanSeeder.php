@@ -15,7 +15,7 @@ class SambutanSeeder extends Seeder
     {
         Sambutan::create([
             'gambar'=> 'kepsek_20240913083808_CAfmnZUi.JPG',
-            'nama'=> 'Mafahir',
+            'nama'=> 'Mafahir, S.E., S.Pd.',
             'konten'=> 'Assalamualaikum Wr. Wb. 
             Selamat datang di website kami, kami adalah perusahaan yang bergerak di bidang penyedia layanan jasa pembuatan website dan aplikasi. Kami menyediakan layanan yang berkualitas dengan harga yang terjangkau. Kami siap melayani anda 24 jam secara 24 jam. Jangan ragu untuk menghubungi kami.
             Wassalamualaikum Wr. Wb.',

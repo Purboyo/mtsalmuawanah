@@ -63,7 +63,7 @@
           </div>
           <!-- Back button -->
           <div class="col-12">
-            <a href="javascript:history.back()" class="btn btn-secondary btn-block">Kembali</a>
+            <a href="/" class="btn btn-secondary btn-block">Kembali</a>
           </div>
         </div>
       </form>

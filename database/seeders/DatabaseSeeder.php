@@ -14,18 +14,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' =>'Purboyo',
-            'email' => 'brotoumbaranp@gmail.com',
-            'password' => Hash::make('123')
+        User::insert([
+            [
+                'name' =>'SuperAdmin',
+                'email' => 'SuperAdmin@gmail.com',
+                'password' => 'AdminSuper123',
+                'role' => 'SuperAdmin',
+                'image' => '/image/users/SuperAdmin.jpg',
+            ],
+            [
+                'name' =>'Purboyo',
+                'email' => 'brotoumbaranp@gmail.com',
+                'password' => '123',
+                'role' => 'Admin',
+                'image' => '/image/users/purboyo.jpg',
+            ]
         ]);
 
         $this->call([
             AddppdbSeeder::class,
             BeritaSeeder::class,
             DeskripsiSeeder::class,
+            DokumentasiSeeder::class,
             EkstrakurikulerSeeder::class,
             FasilitasSeeder::class,
+            KontakSeeder::class,
             ListppdbSeeder::class,
             MisiSeeder::class,
             OrganisasiSeeder::class,
@@ -39,6 +52,7 @@ class DatabaseSeeder extends Seeder
             StatistikSeeder::class,
             VisiSeeder::class,
             StrukturSeeder::class,
+
         ]);
     }
 }

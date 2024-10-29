@@ -38,8 +38,8 @@
               </div>
             </div>
           </div>
-          @endforeach
         </div>
+        @endforeach
       </div>
     </div>
     <!-- End P5RA Section -->

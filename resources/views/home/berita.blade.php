@@ -42,8 +42,8 @@
                     </p>
                     <p >
                       <small>Waktu terbit : {{ $berita->tanggal }}</small>
-                      </p>
-                    <a href="{{ route('berita.detail', $berita->id) }}" class="btn btn-success mt-auto">Baca Selengkapnya</a>
+                    </p>
+                    <a href="/detailberita/{{ $berita->id }}" class="btn btn-success mt-auto">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>
@@ -63,8 +63,8 @@
                     </p>
                     <p >
                       <small>Waktu terbit : {{ $berita->tanggal }}</small>
-                      </p>
-                    <a href="{{ route('berita.detail', $berita->id) }}" class="btn btn-success mt-auto">Baca Selengkapnya</a>
+                    </p>
+                    <a href="/detailberita/{{ $berita->id }}" class="btn btn-success mt-auto">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>

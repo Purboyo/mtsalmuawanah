@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AddPPDB;
 use App\Models\Berita;
 use App\Models\Deskripsi;
+use App\Models\Dokumentasi;
 use App\Models\Ekstrakurikuler;
 use Illuminate\Http\Request;
 use App\Models\Slider;
@@ -12,6 +13,7 @@ use App\Models\Sambutan;
 use App\Models\Statistik;
 use App\Models\Struktur;
 use App\Models\Fasilitas;
+use App\Models\Kontak;
 use App\Models\Listppdb;
 use App\Models\PPDB;
 use App\Models\Prestasi;
@@ -37,12 +39,14 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('home.contact');
+        $kontak = Kontak::first();
+        return view('home.contact', compact('kontak'));
     }
 
     public function dokumentasi()
     {
-        return view('home.dokumentasi');
+        $dokumentasi = Dokumentasi::all();
+        return view('home.dokumentasi', compact('dokumentasi'));
     }
 
     public function berita()

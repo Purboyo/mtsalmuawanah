@@ -1,16 +1,18 @@
 <?php
 
 use App\Http\Controllers\AddPPDBController;
+use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeskripsiController;
+use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KontakKontroller;
 use App\Http\Controllers\SlidersController;
-use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ListppdbController;
 use App\Http\Controllers\OrganisasiController;
 use App\Http\Controllers\P5raController;
@@ -21,10 +23,9 @@ use App\Http\Controllers\SambutanController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\VisiMisiController;
-use App\Models\Listppdb;
-use App\Models\Sejarah;
-use App\Models\Struktur;
+use App\Models\SuperAdmin;
 use Illuminate\Support\Facades\Route;
 
 // Website
@@ -33,7 +34,7 @@ Route::get('/sejarahalmuawanah', [HomeController::class, 'sejarah']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/organisasi', [HomeController::class, 'organisasi']);
 Route::get('/berita', [HomeController::class, 'berita']);
-Route::get('/berita/{id}', [HomeController::class, 'detailberita'])->name('berita.detail');
+Route::get('/detailberita/{id}', [HomeController::class, 'detailberita']);
 Route::get('/strukturorganisasi', [HomeController::class, 'struktur']);
 Route::get('/dokumentasi', [HomeController::class, 'dokumentasi']);
 Route::get('/fasilitasmadrasah', [HomeController::class, 'fasilitas']);
@@ -74,5 +75,13 @@ Route::resource('P5ra', P5raController::class)->middleware('auth');
 Route::resource('Organisasi', OrganisasiController::class)->middleware('auth');
 Route::resource('Ekstrakurikuler', EkstrakurikulerController::class)->middleware('auth');
 
+// SuperAdmin
+Route::resource('SuperAdmin', SuperAdminController::class)->middleware('auth');
+Route::resource('akun', AkunController::class)->middleware('auth');
+
 // Admin Lainya
 Route::resource('Berita', BeritaController::class)->middleware('auth');
+Route::resource('Dokumentasi', DokumentasiController::class)->middleware('auth');
+Route::resource('Kontak', KontakKontroller::class)->middleware('auth');
+
+
