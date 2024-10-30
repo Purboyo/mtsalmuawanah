@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
+              <a class="nav-link fw-bold {{ Request::is('/') ? 'active' : '' }}" href="../">Beranda</a>
             </li>
             <!-- Dropdown Profil -->
             <li class="nav-item dropdown">
@@ -49,14 +49,14 @@
                 Profil
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="sejarahalmuawanah">Sejarah</a></li>
-                <li><a class="dropdown-item" href="strukturorganisasi">Struktur Organisasi</a></li>
-                <li><a class="dropdown-item" href="fasilitasmadrasah">Fasilitas</a></li>
+                <li><a class="dropdown-item" href="../sejarahalmuawanah">Sejarah</a></li>
+                <li><a class="dropdown-item" href="../strukturorganisasi">Struktur Organisasi</a></li>
+                <li><a class="dropdown-item" href="../fasilitasmadrasah">Fasilitas</a></li>
               </ul>
             </li>
             <!-- PPDB -->
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('ppdbmtsalmuawanah') ? 'active' : '' }}" href="ppdbmtsalmuawanah">PPDB</a>
+              <a class="nav-link fw-bold {{ Request::is('ppdbmtsalmuawanah') ? 'active' : '' }}" href="../ppdbmtsalmuawanah">PPDB</a>
             </li>
             <!-- Pendidikan Dropdown -->
             <li class="nav-item dropdown">
@@ -70,22 +70,22 @@
                 Pendidikan
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="prestasi">Prestasi</a></li>
-                <li><a class="dropdown-item" href="p5ra">P5RA</a></li>
-                <li><a class="dropdown-item" href="organisasi">Organisasi dan Ekstrakurikuler</a></li>
+                <li><a class="dropdown-item" href="../prestasi">Prestasi</a></li>
+                <li><a class="dropdown-item" href="../p5ra">P5RA</a></li>
+                <li><a class="dropdown-item" href="../organisasi">Organisasi dan Ekstrakurikuler</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('berita') ? 'active' : '' }}" href="berita">Berita</a>
+              <a class="nav-link fw-bold active" href="../berita">Berita</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('dokumentasi') ? 'active' : '' }}" href="dokumentasi">Dokumentasi</a>
+              <a class="nav-link fw-bold {{ Request::is('dokumentasi', ) ? 'active' : '' }}" href="../dokumentasi">Dokumentasi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="contact">Kontak Kami</a>
+              <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="../contact">Kontak Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="login">Login <i class="fa fa-user"></i></a>
+              <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
             </li>
           </ul>
         </div>
@@ -128,110 +128,57 @@
       </div>
     </main>
 
+
     <!-- Footer -->
     <footer class="mt-5">
-      <div class="footer-top bg-dark text-white p-5">
+      <div class="footer-top bg-dark text-white py-4">
         <div class="container">
-          <div class="row">
-            <div class="col-md-3">
+          <div class="row justify-content-center">
+            <!-- Info Madrasah -->
+            <div class="col-md-3 text-center mb-4 mb-md-0">
               <h4 class="fw-bold">MADRASAH</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Adipisci maiores aspernatur dolore.
-              </p>
-              <strong>Telephone</strong> : <span>+628123456789</span>
-              <br />
-              <strong>Email</strong> : <span>EmailMadrasah@gmail.com</span>
+              <p>Tsanawiyah Al-Mu'Awanah Kawunganten</p>
+              <strong>Telephone:</strong> <span>+628123456789</span><br>
+              <strong>Email:</strong> <span>EmailMadrasah@gmail.com</span>
             </div>
-            <!-- Link -->
-            <div class="col-md-3 offset-md-1">
+            <!-- Links Section -->
+            <div class="col-md-3 text-center">
               <h4 class="fw-bold">Useful Links</h4>
-              <ul class="list-group list-unstyled">
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Beranda
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Profil
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Layanan
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Berita
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none">
-                    <i class="fa fa-chevron-right primary"></i> Kontak Kami
-                  </a>
-                </li>
+              <ul class="list-unstyled">
+                <li><a href="/" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Beranda</a></li>
+                <li><a href="sejarahalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Profil</a></li>
+                <li><a href="ppdbmtsalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> PPDB</a></li>
+                <li><a href="berita" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Berita</a></li>
+                <li><a href="dokumentasi" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Dokumentasi</a></li>
+                <li><a href="contact" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Kontak Kami</a></li>
               </ul>
             </div>
-            
-            <div class="col-md-4 offset-md-1">
-              <h4 class="fw-bold">Ayo Gabung Madrasah</h4>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et!
-              </p>
-              <div class="input-group">
-                <input
-                  type="Text"
-                  class="form-control"
-                  placeholder="Emailmu@contoh.com"
-                />
-                <button
-                  class="btn btn-gabung"
-                  type="button"
-                  id="inputGroupFileAddon04"
-                >
-                  Gabung
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-      
-      <div class="footer-down bg-darker text-white px-5 py-3">
+
+      <div class="footer-down bg-darker text-white py-3">
         <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="copyright">
-                &copy; Copyright <strong>MTS Al-Mu'Awanah</strong>. All Rights Reserved
-              </div>
-              <div class="credits">Designed by Purboyo Broto Umbaran</div>
+          <div class="row align-items-center">
+            <!-- Copyright -->
+            <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+              <div>&copy; <strong>MTS Al-Mu'Awanah</strong>. All Rights Reserved</div>
+              <div>Designed by Purboyo Broto Umbaran</div>
             </div>
-            <div class="col-md-6">
-              <div class="social-links float-end">
-                <a href="" class="mx-2">
-                  <i class="fab fa-facebook fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-twitter fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-instagram fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-whatsapp fa-2x"></i>
-                </a>
-                <a href="" class="mx-2">
-                  <i class="fab fa-linkedin fa-2x"></i>
-                </a>
+            <!-- Social Links -->
+            <div class="col-md-6 text-center text-md-end">
+              <div class="social-links">
+                <a href="https://www.facebook.com/mts.almuawanah.3/" target="_blank" class="mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.instagram.com/mts_almuawanah_cilacap?igsh=cWVhZHc0Y2Zvc3Jl"  target="_blank"  class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://www.youtube.com/@MTsAl-MuawanahKawunganten"  target="_blank"  class="mx-2"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="https://wa.me/81225218812"  target="_blank"  class="mx-2"><i class="fab fa-whatsapp fa-2x"></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-    <!-- end Footer -->
+      </footer>
+      <!-- End Footer -->
 
     <!-- Back to top -->
     <a href="#" class="back-to-top p-3">

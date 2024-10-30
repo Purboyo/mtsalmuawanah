@@ -10,16 +10,6 @@
         @csrf
         @method('PUT')
 
-        {{-- Edit URL Maps --}}
-        <div class="form-group mb-3">
-            <label for="maps">URL Maps</label>
-            <input type="url" class="form-control" id="maps" name="maps" placeholder="Masukkan URL Maps" value="{{ old('maps', $kontak->maps) }}" >
-            <p class="">*Catatan : data yang dimasukan hanya url</p>
-            @error('maps')
-            <small style="color: red">{{ $message }}</small>
-            @enderror
-        </div>
-
         {{-- Edit Email --}}
         <div class="form-group mb-3">
             <label for="email">Email</label>

@@ -49,6 +49,7 @@ class P5raController extends Controller
 
     public function edit(P5ra $P5ra)
     {
+        
         return view('Admin.Pendidikan.P5ra.edit', compact('P5ra'));
     }
 

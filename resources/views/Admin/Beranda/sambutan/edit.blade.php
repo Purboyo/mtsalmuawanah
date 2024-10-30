@@ -17,34 +17,34 @@
                     <label for="title">Gambar</label>
                     <input type="file" class="form-control" id="gambar" name="gambar">
                     <p>Masukan file dengan format webfig,jpg,jepg!</p>
+                    @error('gambar')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror                
                 </div>
-                @error('gambar')
-                <small style="color: red">{{ $message }}</small>
-                @enderror                
                 {{-- edit deskripsi --}}
                 <div class="form-group">
                     <label for="title">Konten</label>
                     <textarea class="form-control" cols="30" rows="10" id="konten" name="konten" placeholder="Masukkan Konten" >{{ $sambutan->konten }}</textarea>
+                    @error('konten')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('konten')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
                 {{-- edit nama --}}
                 <div class="form-group">
                     <label for="title">Nama Kepala Sekolah</label>
                     <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Kepala Sekolah" value="{{ $sambutan->nama }}">
+                    @error('nama')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('nama')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
                 {{-- edit Jabatan --}}
                 <div class="form-group">
                     <label for="title">Jabatan</label>
                     <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Masukkan Judul" value="{{ $sambutan->jabatan }}">
+                    @error('jabatan')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('jabatan')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
 
                 <div class="form-group">

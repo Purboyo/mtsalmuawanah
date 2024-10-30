@@ -50,7 +50,6 @@ class KontakKontroller extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'maps' => 'required|url',
             'email' => 'required|email',
             'phone' => 'required|string',
             'alamat' => 'required|string',

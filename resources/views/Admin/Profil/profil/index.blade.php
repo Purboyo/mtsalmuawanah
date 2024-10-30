@@ -5,6 +5,13 @@
 @section('content')
 <div class="container mt-2">
     <div class="title mt-5">
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            <strong>Berhasil</strong>
+            <p>{{ $message }}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div class="container">
             @foreach ($profils as $profil)
 

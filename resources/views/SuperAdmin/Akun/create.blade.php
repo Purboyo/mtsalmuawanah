@@ -30,7 +30,7 @@
         {{-- Email --}}
         <div class="form-group mb-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" value="" >
+            <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" autocomplete="off" >
             @error('email')
             <small style="color: red">{{ $message }}</small>
             @enderror
@@ -39,7 +39,7 @@
         {{-- Password --}}
         <div class="form-group mb-3">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" >
+            <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" autocomplete="off">
             @error('password')
             <small style="color: red">{{ $message }}</small>
             @enderror

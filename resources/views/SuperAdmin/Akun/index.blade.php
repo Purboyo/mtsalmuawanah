@@ -5,6 +5,18 @@
 @section('content')
 <div class="container mt-5">
     <h2>Manajemen Pengguna</h2>
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-dismissible fade show position-relative" style="border-radius: 10px;">
+        <strong>Berhasil!</strong>
+        <p>{{ $message }}</p>
+        <button type="button" class="btn-close position-absolute" data-bs-dismiss="alert" aria-label="Close" style="top: 10px; right: 10px; color: #6c757d; opacity: 0.8; background: none; border: none;">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+    @endif
+
+
+
     <a href="{{ route('akun.create') }}" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah</a>
 
     <table class="table table-bordered table-hover">
@@ -70,4 +82,5 @@
         }
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 @endsection

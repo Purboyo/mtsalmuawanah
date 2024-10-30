@@ -5,12 +5,13 @@
 @section('content')
 <div class="container">
     {{-- <a href="{{ route('deskripsi.create') }}" class="btn btn-success mb-3"><i class="fa fa-plus"></i> Tambah Data</a> --}}
-
+    
     @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show">
-            <strong>Berhasil</strong>
-            <p>{{ $message }}</p>
-        </div>
+    <div class="alert alert-success alert-dismissible fade show">
+        <strong>Berhasil</strong>
+        <p>{{ $message }}</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
 
     @foreach ($deskripsis as $deskripsi) <!-- Start of foreach loop -->

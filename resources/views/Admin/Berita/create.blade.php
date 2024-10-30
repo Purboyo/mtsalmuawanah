@@ -14,62 +14,61 @@
                 <div class="form-group">
                     <label for="judul">Judul Berita</label>
                     <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan Judul Berita">
+                    @error('judul')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
                 
-                @error('judul')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- Tanggal --}}
                 <div class="form-group">
                     <label for="tanggal">Tanggal Terbit</label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Masukan Tanggal">
+                    @error('tanggal')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
                 
-                @error('tanggal')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- Deskripsi Singkat --}}
                 <div class="form-group">
                     <label for="deskripsisingkat">Deskripsi Singkat</label>
-                    <textarea class="form-control" id="deskripsisingkat" name="deskripsisingkat" rows="2" placeholder="Masukan Deskripsi Singkat"></textarea>
+                    <textarea class="form-control" id="deskripsisingkat" name="deskripsisingkat" rows="2" placeholder="Masukan Deskripsi Singkat"></textarea>      
+                    @error('deskripsisingkat')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                
-                @error('deskripsisingkat')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- Deskripsi Lengkap --}}
                 <div class="form-group">
                     <label for="deskripsi">Isi Berita</label>
                     <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" placeholder="Masukan isi berita"></textarea>
+                    @error('deskripsi')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
                 
-                @error('deskripsi')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- Gambar --}}
                 <div class="form-group">
                     <label for="image">Gambar</label>
                     <input type="file" class="form-control" id="image" name="image">
+                    @error('image')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                     <p>Masukan file dengan format jpg, jpeg, png!</p>
                 </div>
                 
-                @error('image')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- Link --}}
                 <div class="form-group">
                     <label for="link">Link</label>
                     <input type="text" class="form-control" id="link" name="link" placeholder="Masukan link Berita">
+                    @error('link')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
                 
-                @error('link')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- Submit --}}
                 <div class="form-group">

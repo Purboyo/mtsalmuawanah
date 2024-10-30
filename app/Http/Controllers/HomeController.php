@@ -52,7 +52,7 @@ class HomeController extends Controller
 
     public function berita()
     {
-        $beritas = Berita::all();
+        $beritas = Berita::orderBy('updated_at', 'desc')->get();
         return view('home.berita', compact('beritas'));
     }
 

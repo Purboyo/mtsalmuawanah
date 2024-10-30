@@ -16,36 +16,36 @@
                 <div class="form-group">
                     <label for="image">Gambar</label>
                     <input type="file" class="form-control" id="image" name="image">
+                    @error('image')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                     <p>Masukan file dengan format webfig,jpg,jepg!</p>
                 </div>
-                @error('image')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
                 {{-- edit Nama --}}
                 <div class="form-group">
                     <label for="nama">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" value="{{ $Ekstrakurikuler->nama }}">
+                    @error('nama')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('nama')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
                 {{-- edit sub_nama --}}
                 <div class="form-group">
                     <label for="sub_nama">Singkatan</label>
                     <input type="text" class="form-control" id="sub_nama" name="sub_nama" placeholder="Masukkan Singkatan" value="{{ $Ekstrakurikuler->sub_nama }}">
+                    @error('sub_nama')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('sub_nama')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- edit konten --}}
                 <div class="form-group">
                     <label for="konten">Konten</label>
                     <textarea type="text" class="form-control" id="konten" name="konten" placeholder="Masukkan Konten"  >{{ $Ekstrakurikuler->konten }}</textarea>
+                    @error('konten')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('konten')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block">Submit</button>

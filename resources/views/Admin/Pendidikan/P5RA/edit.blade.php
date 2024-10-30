@@ -17,27 +17,27 @@
                     <label for="gambar">Gambar</label>
                     <input type="file" class="form-control" id="gambar" name="gambar">
                     <p>Masukan file dengan format webfig,jpg,jepg!</p>
+                    @error('gambar')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('gambar')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
                 {{-- edit judul --}}
                 <div class="form-group">
                     <label for="judul">Judul</label>
                     <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan judul" value="{{ $P5ra->judul }}">
+                    @error('judul')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('judul')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 {{-- edit deskripsi --}}
                 <div class="form-group">
                     <label for="deskripsi">Deskripsi</label>
                     <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="Masukkan deskripsi"  cols="30" rows="10">{{ $P5ra->deskripsi }}</textarea>
+                    @error('deskripsi')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('deskripsi')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block">Submit</button>

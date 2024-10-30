@@ -15,26 +15,26 @@
                 <div class="form-group">
                     <label for="siswa">Siswa</label>
                     <input type="text" class="form-control" id="siswa" name="siswa" placeholder="Masukkan Judul" value="{{ $statistik->siswa }}">
+                    @error('siswa')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('siswa')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
                 {{-- edit Guru --}}
                 <div class="form-group">
                     <label for="guru">Guru</label>
                     <input type="text" class="form-control" id="guru" name="guru" placeholder="Masukkan Judul" value="{{ $statistik->guru }}">
+                    @error('guru')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('guru')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
                 {{-- edit Karyawan --}}
                 <div class="form-group">
                     <label for="karyawan">Karyawan</label>
                     <input type="text" class="form-control" id="karyawan" name="karyawan" placeholder="Masukkan Judul" value="{{ $statistik->karyawan }}">
+                    @error('karyawan')
+                    <small style="color: red">{{ $message }}</small>
+                    @enderror
                 </div>
-                @error('karyawan')
-                <small style="color: red">{{ $message }}</small>
-                @enderror
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block">Submit</button>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah PPDB')
+@section('title', 'Tambah ListPPDB')
 
 @section('content')
     <div class="container">
@@ -15,12 +15,15 @@
                         {{-- Form Input List Pertama --}}
                         <div class="form-group mb-3">
                             <label for="list" class="form-label">List</label>
-                            <input type="text" class="form-control" name="list[]" id="list[]" placeholder="Masukkan List">
-                            @error('list')
-                            <small style="color: red">{{ $message }}</small>
-                            @enderror
+                            <input type="text" class="form-control" name="list[]" placeholder="Masukkan List">
+
+                            {{-- Menampilkan Pesan Error untuk Setiap Elemen list[] --}}
+                            @foreach ($errors->get('list') as $error)
+                                <small style="color: red">{{ $error }}</small>
+                            @endforeach
                         </div>
                     </div>
+
 
                     {{-- Tombol Tambah Form --}}
                     <button type="button" class="btn btn-primary mb-3" id="addFormButton">Tambah Form</button>

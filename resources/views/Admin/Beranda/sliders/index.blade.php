@@ -10,12 +10,13 @@
         </a>
 
         @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-dismissible fade show">
-                <strong>Berhasil!</strong>
-                <p>{{ $message }}</p>
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
+        <div class="alert alert-success alert-dismissible fade show">
+            <strong>Berhasil!</strong>
+            <p>{{ $message }}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         @endif
+    
 
         {{-- Kartu untuk Menampilkan Slider --}}
         <div class="row row-cols-1 row-cols-md-3 g-4">
