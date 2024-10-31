@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title', "MTS Al-Mu'awanah")</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('assets/img/logo.jpeg') }}" type="image/x-icon" />
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->
@@ -12,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" />
     <!-- AOS -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/aos/dist/aos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style2.css') }}" />
+
   </head>
   <body class="body">
     <!-- Navbar -->
@@ -107,39 +111,49 @@
         </div>
         <!-- End Breadcumbs -->
 
-    <!-- Main Content -->
-    <main class="py-5">
-        <div class="container">
+        
+        <!-- Main Content -->
+        <main class="py-5">
+          <div class="container">
             <h2 class="text-center fw-bold">Dokumentasi</h2>
             <div class="row mt-5">
-                <div class="col-md-12">
-                    <div class="row">
-                        @foreach ($dokumentasi as $item)
-                        <div class="col-md-4 mb-4">
-                            <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid" style="max-height: 300px; width: 100%; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal{{ $item->id }}">
-                        </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="imageModal{{ $item->id }}" tabindex="-1" aria-labelledby="imageModalLabel{{ $item->id }}" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="imageModalLabel{{ $item->id }}">{{ $item->nama }}</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <!-- Filter -->
+              <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <ul class="list-unstyled d-flex portfolio-filter">
+                        <li data-filter="*" class="py-2 px-4 filter-active">All</li>
+                        @foreach ($filters as $item)
+                            <li data-filter=".filter-{{ $item->filter }}" class="py-2 px-4">{{ $item->filter }}</li>
                         @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <!-- End Main Content -->
+                    </ul>
+                 </div>
+              <div class="col-md-12 mt-3">
+                      <div class="row">
+                          @foreach ($dokumentasi as $item)
+                          <div class="col-md-4 mb-4 filter filter-{{ $item->filter }}">
+                              <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid" style="max-height: 300px; width: 100%; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal{{ $item->id }}">
+                          </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="imageModal{{ $item->id }}" tabindex="-1" aria-labelledby="imageModalLabel{{ $item->id }}" aria-hidden="true">
+                              <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <h5 class="modal-title" id="imageModalLabel{{ $item->id }}">{{ $item->nama }}</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          @endforeach
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </main>
 
     <!-- Footer -->
     <footer class="mt-5">
@@ -187,5 +201,30 @@
             AOS.init();
         });
     </script>
+
+    <script>
+      // Menangani klik pada filter
+      const filters = document.querySelectorAll('.portfolio-filter li');
+      const items = document.querySelectorAll('.filter');
+
+      filters.forEach(filter => {
+          filter.addEventListener('click', function() {
+              const filterValue = this.getAttribute('data-filter');
+
+              // Menandai filter aktif
+              filters.forEach(f => f.classList.remove('filter-active'));
+              this.classList.add('filter-active');
+
+              // Menyembunyikan dan menampilkan item berdasarkan filter
+              items.forEach(item => {
+                  if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+                      item.style.display = 'block'; // Tampilkan item
+                  } else {
+                      item.style.display = 'none'; // Sembunyikan item
+                  }
+              });
+          });
+      });
+</script>
 </body>
 </html>

@@ -3,3 +3,37 @@
     background-color: #343a40; /* Dark gray color */
     color: white; /* Change text color to white */
   }
+
+      /* Filter Styles */
+/* Style dasar untuk semua item filter */
+.portfolio-filter li {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  padding: 8px 16px; /* Agar ukuran padding seragam */
+}
+
+/* Hover effect untuk tiap filter */
+.portfolio-filter li:hover {
+  background-color: #e6e6e6;
+  color: black;
+  border-color: #ccc;
+}
+
+/* Style untuk filter yang sedang aktif */
+.portfolio-filter .filter-active {
+  background-color: #28a745; /* Hijau */
+  color: white; 
+  border-color: #28a745;
+}
+/* List Filter dengan border dan jarak antar item */
+.modal-body .list-group-item {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px 15px;
+}
+.modal-body h6 {
+  font-weight: bold;
+}

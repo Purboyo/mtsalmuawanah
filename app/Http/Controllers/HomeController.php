@@ -13,6 +13,7 @@ use App\Models\Sambutan;
 use App\Models\Statistik;
 use App\Models\Struktur;
 use App\Models\Fasilitas;
+use App\Models\Filter;
 use App\Models\Kontak;
 use App\Models\Listppdb;
 use App\Models\PPDB;
@@ -47,7 +48,8 @@ class HomeController extends Controller
     public function dokumentasi()
     {
         $dokumentasi = Dokumentasi::all();
-        return view('home.dokumentasi', compact('dokumentasi'));
+        $filters = Filter::all();
+        return view('home.dokumentasi', compact('dokumentasi', 'filters'));
     }
 
     public function berita()

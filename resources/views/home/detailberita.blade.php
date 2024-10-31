@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title', "MTS Al-Mu'awanah")</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('assets/img/logo.jpeg') }}" type="image/x-icon" />
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->

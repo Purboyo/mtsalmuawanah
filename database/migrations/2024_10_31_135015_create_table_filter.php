@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dokumentasi', function (Blueprint $table) {
+        Schema::create('filter', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('image');
-            $table->string('filter')->nullable();
+            $table->string('filter');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dokumentasi');
+        Schema::dropIfExists('table_filter');
     }
 };

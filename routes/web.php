@@ -10,6 +10,7 @@ use App\Http\Controllers\DeskripsiController;
 use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\FilterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakKontroller;
 use App\Http\Controllers\SlidersController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\VisiMisiController;
+use App\Models\Filter;
 use App\Models\SuperAdmin;
 use Illuminate\Support\Facades\Route;
 
@@ -82,6 +84,7 @@ Route::resource('akun', AkunController::class)->middleware('auth');
 // Admin Lainya
 Route::resource('Berita', BeritaController::class)->middleware('auth');
 Route::resource('Dokumentasi', DokumentasiController::class)->middleware('auth');
+Route::resource('filter', FilterController::class)->middleware('auth');
 Route::resource('Kontak', KontakKontroller::class)->middleware('auth');
 
 

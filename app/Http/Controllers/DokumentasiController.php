@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dokumentasi;
+use App\Models\Filter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -14,7 +15,8 @@ class DokumentasiController extends Controller
     public function index()
     {
         $dokumentasis = Dokumentasi::all();
-        return view('Admin.Dokumentasi.index', compact('dokumentasis'));
+        $filters = Filter::all();
+        return view('Admin.Dokumentasi.index', compact('dokumentasis', 'filters'));
     }
 
     /**
@@ -22,7 +24,8 @@ class DokumentasiController extends Controller
      */
     public function create()
     {
-        return view('Admin.Dokumentasi.create');
+        $filters = Filter::all();
+        return view('Admin.Dokumentasi.create', compact('filters'));
     }
 
     /**
@@ -32,6 +35,7 @@ class DokumentasiController extends Controller
     {
         $request->validate([
             'nama' => 'required',
+            'filter' => 'required',
             'image' => 'required|image',
         ]);
 
@@ -62,7 +66,8 @@ class DokumentasiController extends Controller
     public function edit($id)
     {
         $Dokumentasi = Dokumentasi::find($id);
-        return view('Admin.Dokumentasi.edit', compact('Dokumentasi'));
+        $filters = Filter::all();
+        return view('Admin.Dokumentasi.edit', compact('Dokumentasi', 'filters'));
     }
 
     /**
@@ -72,6 +77,7 @@ class DokumentasiController extends Controller
     {
         request()->validate([
             'nama' => 'required',
+            'filter' => 'required',
             'image' => 'image',
         ]);
 

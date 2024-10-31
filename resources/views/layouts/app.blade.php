@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
-
+  {{-- favicon --}}
+  <link rel="icon" href="{{ asset('assets/img/logo.jpeg') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Theme style -->
@@ -16,7 +17,11 @@
   <!-- Include Lightbox CSS -->
   <link href="/assets/vendor/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <!-- Include Custom CSS -->
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
   <style>
+
+
   </style>
 </head>
 <body class="hold-transition sidebar-mini">

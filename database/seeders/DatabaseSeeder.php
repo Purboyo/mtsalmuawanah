@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Filter;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -39,6 +41,7 @@ class DatabaseSeeder extends Seeder
             DokumentasiSeeder::class,
             EkstrakurikulerSeeder::class,
             FasilitasSeeder::class,
+            FilterSeeder::class,
             KontakSeeder::class,
             ListppdbSeeder::class,
             MisiSeeder::class,

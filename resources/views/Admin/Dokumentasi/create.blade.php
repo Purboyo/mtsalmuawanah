@@ -28,6 +28,21 @@
                     <small style="color: red">{{ $message }}</small>
                     @enderror
                 </div>
+                {{--  Filter --}}
+                <div class="form-group">
+                    <label for="filter">Filter</label>
+                    <select class="form-control" id="filter" name="filter">
+                        <option value="">Pilih Filter</option>
+                        @foreach($filters as $filter)
+                            <option value="{{ $filter->filter }}" >
+                                {{ $filter->filter }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('filter')
+                        <small style="color: red">{{ $message }}</small>
+                    @enderror
+                </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block">Submit</button>
                 </div>
