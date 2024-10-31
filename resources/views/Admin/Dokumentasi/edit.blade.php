@@ -32,16 +32,16 @@
                 {{-- edit Filter --}}
                 <div class="form-group">
                     <label for="filter">Filter</label>
-                    <select class="form-control" id="filter" name="filter">
+                    <select class="form-control" id="filter_id" name="filter_id">
                         <option value="">Pilih Filter</option>
                         @foreach($filters as $filter)
-                            <option value="{{ $filter->filter }}" 
+                            <option value="{{ $filter->id }}" 
                                     {{ $Dokumentasi->filter == $filter->filter? 'selected' : '' }}>
-                                {{ $filter->filter }}
+                                    {{ $filter->filter }}
                             </option>
                         @endforeach
                     </select>
-                    @error('filter')
+                    @error('filter_id')
                         <small style="color: red">{{ $message }}</small>
                     @enderror
                 </div>

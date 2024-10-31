@@ -15,6 +15,7 @@ class FilterSeeder extends Seeder
     {
         Filter::insert([
             [
+                
                 'filter' => 'Outdoor',
             ],
             [

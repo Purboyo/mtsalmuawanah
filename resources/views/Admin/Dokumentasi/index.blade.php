@@ -33,17 +33,23 @@
                     <div class="col-md-8">
                         <h6>Daftar Filter</h6>
                         <ul class="list-group">
-                            @foreach ($filters as $item)
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    {{ $item->filter }}
-                                    <!-- Tombol Hapus -->
-                                    <form action="{{ route('filter.destroy', $item->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus filter ini?')">X</button>
-                                    </form>
-                                </li>
-                            @endforeach
+                            @foreach ($filters as $filter)
+                            <div class="col-md-4 mb-3">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h6 class="card-title">{{ $filter->filter }}</h6>
+                                        <form action="{{ route('filter.destroy', $filter->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus filter ini beserta semua dokumentasi yang terkait?')">
+                                                Hapus Filter
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        
                         </ul>
                     </div>
                     
@@ -88,7 +94,7 @@
                 <ul class="list-unstyled d-flex portfolio-filter">
                     <li data-filter="*" class="py-2 px-4 filter-active">All</li>
                     @foreach ($filters as $item)
-                        <li data-filter=".filter-{{ $item->filter }}" class="py-2 px-4">{{ $item->filter }}</li>
+                        <li data-filter=".filter-{{ $item->id }}" class="py-2 px-4">{{ $item->filter }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -97,7 +103,7 @@
         <!-- Kartu untuk Menampilkan Dokumentasi -->
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
             @foreach ($dokumentasis as $dokumentasi)
-                <div class="col mb-4 filter-{{ $dokumentasi->filter }}" data-aos="fade-up">
+                <div class="col mb-4 filter-{{ $dokumentasi->filter_id }}" data-aos="fade-up">
                     <div class="card shadow-sm">
                         <img src="{{ asset('image/dokumentasi/' . $dokumentasi->image) }}" 
                              alt="{{ $dokumentasi->nama }}" 
@@ -106,7 +112,7 @@
                         
                         <div class="card-body text-center">
                             <h5 class="card-text">{{ $dokumentasi->nama }}</h5>        
-                            <p class="card-text">Filter : {{ $dokumentasi->filter }}</p>        
+                            <p class="card-text">Filter : {{ $dokumentasi->filter ? $dokumentasi->filter->filter : 'Tidak ada filter' }}</p>
                             <!-- Tombol Edit dan Hapus -->
                             <div class="d-flex justify-content-center mt-3">
                                 <a href="{{ route('Dokumentasi.edit', $dokumentasi->id) }}" class="btn btn-warning me-2">

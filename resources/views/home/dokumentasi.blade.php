@@ -123,14 +123,14 @@
                     <ul class="list-unstyled d-flex portfolio-filter">
                         <li data-filter="*" class="py-2 px-4 filter-active">All</li>
                         @foreach ($filters as $item)
-                            <li data-filter=".filter-{{ $item->filter }}" class="py-2 px-4">{{ $item->filter }}</li>
+                            <li data-filter=".filter-{{ $item->id }}" class="py-2 px-4">{{ $item->filter }}</li>
                         @endforeach
                     </ul>
                  </div>
               <div class="col-md-12 mt-3">
                       <div class="row">
                           @foreach ($dokumentasi as $item)
-                          <div class="col-md-4 mb-4 filter filter-{{ $item->filter }}">
+                          <div class="col-md-4 mb-4 filter filter-{{ $item->filter_id }}">
                               <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid" style="max-height: 300px; width: 100%; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal{{ $item->id }}">
                           </div>
 

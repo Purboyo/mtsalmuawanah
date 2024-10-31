@@ -11,11 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('filter', function (Blueprint $table) {
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
+            $table->id();
+            $table->string('filter');
+            $table->timestamps();
+        });
         Schema::create('dokumentasi', function (Blueprint $table) {
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->id();
             $table->string('nama');
             $table->string('image');
-            $table->string('filter')->nullable();
+            $table->unsignedBigInteger('filter_id')->nullable();
+            $table->foreign('filter_id')->references('id')->on('filter')->onDelete('cascade');
             $table->timestamps();
         });
     }

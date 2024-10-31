@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Filter;
+use App\Models\Dokumentasi;
 
 class FilterController extends Controller
 {
@@ -65,13 +66,18 @@ class FilterController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
-        Filter::findOrFail($id)->delete();
+        // Temukan filter berdasarkan ID
+        $filter = Filter::findOrFail($id);
+        
+        // Set filter_id dokumentasi yang terkait menjadi null
+        Dokumentasi::where('filter_id', $filter->id)->update(['filter_id' => null]);
     
-        return redirect()->back()->with('success', 'Filter berhasil dihapus!');
+        // Hapus filter
+        $filter->delete();
+    
+        return redirect('/Dokumentasi')->with('success', 'Filter berhasil dihapus dan data dokumentasi terkait telah diperbarui.');
     }
+    
 }

@@ -14,7 +14,7 @@ class DokumentasiController extends Controller
      */
     public function index()
     {
-        $dokumentasis = Dokumentasi::all();
+        $dokumentasis = Dokumentasi::with('filter')->get();
         $filters = Filter::all();
         return view('Admin.Dokumentasi.index', compact('dokumentasis', 'filters'));
     }
@@ -33,9 +33,10 @@ class DokumentasiController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         $request->validate([
             'nama' => 'required',
-            'filter' => 'required',
+            'filter_id' => 'required|integer',
             'image' => 'required|image',
         ]);
 
@@ -77,7 +78,7 @@ class DokumentasiController extends Controller
     {
         request()->validate([
             'nama' => 'required',
-            'filter' => 'required',
+            'filter_id' => 'required',
             'image' => 'image',
         ]);
 
