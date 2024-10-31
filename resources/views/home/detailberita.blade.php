@@ -115,7 +115,7 @@
           <div class="card">
             <div class="card-body">
               <h2>{{ $berita->judul }}</h2>
-              <p class="text-muted">Diterbitkan pada: {{ $berita->tanggal }}</p>
+              <p class="text-muted">Diterbitkan pada: <strong>{{ $berita->tanggal }}</strong></p>
               @if($berita->image)
               <img src="/image/berita/{{ $berita->image }}" class="img-fluid mb-3 d-block mx-auto" alt="Gambar Berita">
               @endif

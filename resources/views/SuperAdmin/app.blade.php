@@ -58,7 +58,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item @if(in_array($currentSegment, ['SuperAdmin'])) menu-open @else menu-close @endif">
+            <li class="nav-item menu-close @if(in_array($currentSegment, ['SuperAdmin'])) menu-open @else menu-close @endif">
                 <a href="/SuperAdmin" class="nav-link ">
                     <i class="nav-icon fa-solid fa-circle-info"></i>
                     <p>
@@ -68,7 +68,7 @@
               </li>
               {{-- Website --}}
             <li class="nav-item">
-                <a href="/" target="_blank" class="nav-link">
+                <a href="/" target="_blank" class="nav-link ">
                     <i class="nav-icon fa-solid fa-arrow-up-right-from-square"></i>
                     <p>
                     Website
@@ -78,7 +78,7 @@
 
               {{-- Admin --}}
             <li class="nav-item">
-                <a href="/dashboard" target="_blank" class="nav-link">
+                <a href="/dashboard" target="_blank" class="nav-link ">
                     <i class="nav-icon fa-solid fa-chart-line"></i>
                     <p>
                     Admin

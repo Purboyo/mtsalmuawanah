@@ -9,26 +9,21 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Theme style -->
   <link rel="stylesheet" href="/Lte/dist/css/adminlte.min.css">
-  <!-- Bootstrap Css -->
-    <link
-      href="/assets/vendor/bootstrap/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Include Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
   <!-- Include Font Awesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Include Lightbox CSS -->
   <link href="/assets/vendor/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-
+  <style>
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
   @php
     $currentSegment = request()->segment(1);
- @endphp
+  @endphp
 
- 
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -43,7 +38,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/dashboard" class="brand-link">
       <img src="/assets/img/logo.jpeg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">MTS Al-Muawanah</span>
     </a>
@@ -51,33 +46,14 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex" data-toggle="collapse" data-target="#userInfoCard" aria-expanded="false">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="{{ Auth::user()->image }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ Auth::user()->image }}" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-            <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+        <div class="info ms-3">
+          <a href="#" class="d-block text-white" data-bs-toggle="modal" data-bs-target="#userModal">{{ Auth::user()->name }}</a>
         </div>
-    </div>
-    
-    <!-- User Info Card -->
-    <div class="collapse" id="userInfoCard">
-      <div class="card card-body bg-dark">
-          <div class="text-center mb-3">
-              <img src="{{ Auth::user()->image }}" class="img-circle elevation-2" alt="User Image" style="width: 100px; height: 100px;">
-          </div>
-          <p><strong>Nama:</strong> {{ Auth::user()->name }}</p>
-          <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
-          <p><strong>Password:</strong> <span id="password-display">••••••••</span>
-            <span id="password" style="display: none;">{{ Auth::user()->password }}</span>
-              <button class="btn btn-link" id="toggle-password" onclick="togglePassword()">
-                  <i id="eye-icon" class="fa fa-eye-slash"></i>
-              </button>
-          </p>
-          <p><strong>Role:</strong> {{ Auth::user()->role }}</p>
       </div>
-  </div>
-
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -326,6 +302,34 @@
   </div>
   <!-- /.content-wrapper -->
 
+  <!-- User Info Modal -->
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-whitesmoke">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">Informasi Pengguna</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid bg-body-secondary mb-3">
+            <div class="container text-center mb-3">
+              <img src="{{ Auth::user()->image }}" class="img-circle elevation-2" alt="User Image" style="width: 100px; height: 100px;">
+            </div>
+          </div>
+          <h5 class="card-title fw-bold mb-3">{{ Auth::user()->name }}</h5>
+          <p class="card-text"><strong>Email:</strong> {{ Auth::user()->email }}</p>
+          <p class="card-text"><strong>Password:</strong> <span id="password-display">••••••••</span>
+            <span id="password" style="display: none;">{{ Auth::user()->password }}</span>
+            <button class="btn btn-link text-black" id="toggle-password" onclick="togglePassword()">
+              <i id="eye-icon" class="fa fa-eye-slash text-black"></i>
+            </button>            
+          </p>
+          <p class="card-text"><strong>Role:</strong> {{ Auth::user()->role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -349,20 +353,16 @@
 <!-- jQuery -->
 <script src="/Lte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-{{-- <script src="/Lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/Lte/dist/js/adminlte.min.js"></script>
-{{-- fontawesome --}}
+<!-- fontawesome -->
 <script src="/assets/vendor/fontawesome/js/all.min.js"></script>
 <!-- Include jQuery (required for Select2) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Include Select2 JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-<!-- Select2 JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-{{-- lightbox2 JS --}}
-<script src="/assets/vendor/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- lightbox2 JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
 <script>
@@ -377,11 +377,11 @@
         // Fungsi untuk menampilkan ikon pada dropdown
         function formatIcon (icon) {
             if (!icon.id) { return icon.text; }
-            var $icon = $(
-                '<span><i class="' + $(icon.element).data('icon') + '"></i> ' + icon.text + '</span>'
-            );
-            return $icon;
-        }
+            var $icon = $( 
+                '<span><i class="' + $(icon.element).data('icon') + '"></i> ' + icon.text + '</span>' 
+            ); 
+            return $icon; 
+        } 
     });
 </script>
 <script>

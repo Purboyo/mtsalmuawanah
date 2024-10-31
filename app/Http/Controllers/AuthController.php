@@ -29,11 +29,12 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         // Cek peran pengguna dan arahkan sesuai
-        if ($akun->role === 'SuperAdmin') {
+        if ($akun->name === 'SuperAdmin') {
             return redirect('/SuperAdmin');
-        } elseif ($akun->role === 'Admin') {
+        } else {
             return redirect('/dashboard');
         }
+
 
         // Default redirect jika peran tidak cocok
         return redirect('/dashboard');

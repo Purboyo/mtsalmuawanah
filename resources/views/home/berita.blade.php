@@ -60,7 +60,7 @@
                       {{ implode(' ', array_slice(explode(' ', $berita->deskripsisingkat), 0, 100)) }}...
                     </p>
                     <p >
-                      <small>Waktu terbit : {{ $berita->tanggal }}</small>
+                      <small>Waktu terbit : <strong>{{ $berita->tanggal }}</strong></small>
                     </p>
                     <a href="/detailberita/{{ $berita->id }}" class="btn btn-success mt-auto">Baca Selengkapnya</a>
                   </div>

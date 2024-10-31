@@ -3,85 +3,95 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@yield('title', 'MTS Al-Mu\'awanah')</title>
+    <title>@yield('title', "MTS Al-Mu'awanah")</title>
     <!-- Bootstrap Css -->
-    <link
-      href="assets/vendor/bootstrap/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
-    <!-- aos-->
-     <link rel="stylesheet" href="assets/vendor/aos/dist/aos.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="{{ asset('assets/vendor/aos/dist/aos.css') }}" />
   </head>
   <body class="body">
-   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-">
-  <div class="container">
-    <img src="assets/img/logo.jpeg" alt="Logo MTS Al-Mu'awanah" class="logo" />
-    <a class="navbar-brand fw-bold" href="#">
-      <span class="primary">MTS </span>AL-MU'AWANAH
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
-        </li>
-        {{-- Dropdown Profil --}}
-        <li class="nav-item dropdown">
-          <a class="nav-link fw-bold dropdown-toggle {{ Request::is('sejarahalmuawanah', 'strukturorganisasi', 'fasilitasmadrasah') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profil
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="sejarahalmuawanah">Sejarah</a></li>
-            <li><a class="dropdown-item" href="strukturorganisasi">Struktur Organisasi</a></li>
-            <li><a class="dropdown-item" href="fasilitasmadrasah">Fasilitas</a></li>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div class="container">
+        <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo MTS Al-Mu'awanah" class="logo" />
+        <a class="navbar-brand fw-bold" href="#">
+          <span class="primary">MTS</span> AL-MU'AWANAH
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold {{ Request::is('/') ? 'active' : '' }}" href="../">Beranda</a>
+            </li>
+            <!-- Dropdown Profil -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link fw-bold dropdown-toggle {{ Request::is('sejarahalmuawanah', 'strukturorganisasi', 'fasilitasmadrasah') ? 'active' : '' }}"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profil
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../sejarahalmuawanah">Sejarah</a></li>
+                <li><a class="dropdown-item" href="../strukturorganisasi">Struktur Organisasi</a></li>
+                <li><a class="dropdown-item" href="../fasilitasmadrasah">Fasilitas</a></li>
+              </ul>
+            </li>
+            <!-- PPDB -->
+            <li class="nav-item">
+              <a class="nav-link fw-bold {{ Request::is('ppdbmtsalmuawanah') ? 'active' : '' }}" href="../ppdbmtsalmuawanah">PPDB</a>
+            </li>
+            <!-- Pendidikan Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link fw-bold dropdown-toggle {{ Request::is('prestasi', 'p5ra', 'organisasi') ? 'active' : '' }}"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pendidikan
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../prestasi">Prestasi</a></li>
+                <li><a class="dropdown-item" href="../p5ra">P5RA</a></li>
+                <li><a class="dropdown-item" href="../organisasi">Organisasi dan Ekstrakurikuler</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold {{ Request::is('berita', ) ? 'active' : '' }}" href="../berita">Berita</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold {{ Request::is('dokumentasi', ) ? 'active' : '' }}" href="../dokumentasi">Dokumentasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="../contact">Kontak Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
+            </li>
           </ul>
-        </li>
-        {{-- PPDB --}}
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ Request::is('ppdbmtsalmuawanah') ? 'active' : '' }}" href="ppdbmtsalmuawanah">PPDB</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link fw-bold dropdown-toggle {{ Request::is('prestasi', 'p5ra', 'organisasi') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pendidikan
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="prestasi">Prestasi</a></li>
-            <li><a class="dropdown-item" href="p5ra">P5RA</a></li>
-            <li><a class="dropdown-item" href="organisasi">Organisasi dan Ekstrakurikuler</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ Request::is('berita', 'detailberita') ? 'active' : '' }}" href="berita">Berita</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ Request::is('dokumentasi') ? 'active' : '' }}" href="dokumentasi">Dokumentasi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="contact">Kontak Kami</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="login">Login  <i class="fa fa-user"></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- endnavbar -->
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
 
 
     <!-- Main Content -->
@@ -149,14 +159,25 @@
     </a>
     <!-- end to top -->
 
+    <!-- jQuery -->
     <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Font Awesome -->
     <script src="assets/vendor/fontawesome/js/all.min.js"></script>
+    <!-- Masonry -->
     <script src="assets/vendor/mansory/masonry.pkgd.min.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <!-- Isotope -->
     <script src="assets/vendor/isotop/isotope.pkgd.min.js"></script>
+    <!-- AOS -->
+    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <!-- Custom App JS -->
+    <script src="assets/js/app.js"></script>
+
     <script>
-      Aos.init();
+      AOS.init();
     </script>
+
   </body>
