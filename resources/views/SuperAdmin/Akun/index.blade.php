@@ -3,8 +3,7 @@
 @section('title', 'Data Akun')
 
 @section('content')
-<div class="container mt-5">
-    <h2>Manajemen Pengguna</h2>
+<div class="container mt-3">
     @if ($message = Session::get('success'))
     <div class="alert alert-success alert-dismissible fade show position-relative" style="border-radius: 10px;">
         <strong>Berhasil!</strong>
@@ -15,52 +14,35 @@
     </div>
     @endif
 
-
-
     <a href="{{ route('akun.create') }}" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah</a>
 
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Foto</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Role</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($akun as $index => $user)
-            <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>
-                    <img src="{{ asset($user->image) }}" style="width: 81px; height: 81px;" alt="{{ $user->image }}">
-                </td>                
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>
-                    <span id="password-{{ $index }}" style="display: none">{{ $user->password }}</span>
-                    <span id="masked-password-{{ $index }}">••••••••</span>
-                    <button class="btn btn-link" onclick="togglePassword({{ $index }})">
-                        <i id="eye-icon-{{ $index }}" class="fa fa-eye-slash"></i>
-                    </button>
-                </td>
-                <td>{{ $user->role }}</td>
-                <td>
+    <div class="row">
+        @foreach($akun as $index => $user)
+        <div class="col-md-4 mb-4">
+            <div class="card border">
+                <img src="{{ asset($user->image) }}" class="card-img-top" style="width: 100%; height: 255px; object-fit: cover;" alt="{{ $user->name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $user->name }}</h5>
+                    <p class="card-text">Email: {{ $user->email }}</p>
+                    <p class="card-text">Role: {{ $user->role }}</p>
+                    <p>
+                        <span id="password-{{ $index }}" style="display: none">{{ $user->password }}</span>
+                        <span id="masked-password-{{ $index }}">••••••••</span>
+                        <button class="btn btn-link" onclick="togglePassword({{ $index }})">
+                            <i id="eye-icon-{{ $index }}" class="fa fa-eye-slash"></i>
+                        </button>
+                    </p>
                     <a href="{{ route('akun.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
                     <form action="{{ route('akun.destroy', $user->id) }}" method="POST" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?')"><i class="fa fa-trash"></i> Hapus</button>
                     </form>
-                </td>
-                
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
 </div>
 
 <script>

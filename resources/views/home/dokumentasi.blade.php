@@ -130,7 +130,7 @@
               <div class="col-md-12 mt-3">
                       <div class="row">
                           @foreach ($dokumentasi as $item)
-                          <div class="col-md-4 mb-4 filter filter-{{ $item->filter_id }}">
+                          <div class="col-md-4 mb-4 filter filter-{{ $item->filter_id }}" data-aos="fade-up">
                               <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid" style="max-height: 300px; width: 100%; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal{{ $item->id }}">
                           </div>
 

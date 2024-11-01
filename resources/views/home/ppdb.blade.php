@@ -54,7 +54,7 @@
     <!-- Additional Information Section -->
     <div class="bg-light py-5">
       <div class="container">
-        <h3 class="text-center fw-bold mb-4">Kenapa Memilih Sekolah Kami?</h3>
+        <h3 class="text-center fw-bold mb-5 mt-5">Kenapa Memilih Sekolah Kami?</h3>
         <div class="row">
           @foreach ($addppdbs as $item)
             <div class="col-md-4 text-center" data-aos="fade-up">

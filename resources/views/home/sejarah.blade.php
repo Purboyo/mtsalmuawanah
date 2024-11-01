@@ -28,12 +28,12 @@
     
         <div class="row mb-3">
             <!-- Gambar Sekolah -->
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right">
                 <img src="{{ asset('image/sejarah/'. $sejarahs->foto) }}" alt="{{$sejarahs->foto}}" class="img-fluid rounded school-image">
             </div>
     
             <!-- Deskripsi Sekolah -->
-            <div class="col-md-8">
+            <div class="col-md-8" data-aos="fade-left">
                 <div class="school-description">
                     <p>
                         {{ $sejarahs->deskripsi }} 
@@ -49,7 +49,7 @@
       
     
     
-        <div class="row info-table mt-4">
+        <div class="row info-table mt-4" data-aos="fade-up">
             <table>
                 <tr>
                     <th>Nama</th>

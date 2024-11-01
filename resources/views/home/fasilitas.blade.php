@@ -26,7 +26,7 @@
       <!-- Card Section -->
       <div class="row mt-5">
         @foreach ($fasilitass as $fasilitas)
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
               <div class="card facility-card">
                   <img src="{{ asset('image/fasilitas/' . $fasilitas->image) }}" class="card-img-top" alt="{{$fasilitas->name}}">
                   <div class="card-body">
