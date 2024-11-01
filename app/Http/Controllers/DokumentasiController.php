@@ -33,7 +33,6 @@ class DokumentasiController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $request->validate([
             'nama' => 'required',
             'filter_id' => 'required|integer',

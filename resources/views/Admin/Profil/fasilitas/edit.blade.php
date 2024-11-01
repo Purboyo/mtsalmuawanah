@@ -32,7 +32,7 @@
                 {{-- edit jumlah --}}
                 <div class="form-group">
                     <label for="jumlah">Total</label>
-                    <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Masukkan Total" value="{{ $fasilita->jumlah }}">
+                    <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="Masukkan Total" value="{{ $fasilita->jumlah }}">
                     @error('jumlah')
                     <small style="color: red">{{ $message }}</small>
                     @enderror

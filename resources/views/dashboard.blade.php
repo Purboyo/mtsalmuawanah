@@ -4,4 +4,7 @@
 
 @section('content')
     <h1>Selamat datang {{ Auth::user()->name;}}</h1>
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
 @endsection

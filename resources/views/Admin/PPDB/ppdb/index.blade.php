@@ -20,19 +20,26 @@
                     <div class="col-md-4 text-center">
                         <img src="{{ asset('image/ppdb/' . $ppdb->image) }}" alt="{{ $ppdb->title }}" class="img-fluid rounded" width="400">
                     </div>
-
+        
                     <!-- Konten, Nama, Jabatan -->
                     <div class="col-md-8">
                         <h5 class="fw-bold">{{ $ppdb->title }}</h5>
                         <p class="text-muted">{!! nl2br(e($ppdb->subtitle)) !!}</p>
                         <p>Status : <strong>{{ $ppdb->status }}</strong></p>
-                        <a href="{{$ppdb->link}}" class="btn btn-success mt-4">Daftar Sekarang</a>
+        
+                        @if ($ppdb->status == 'Dibuka')
+                            <a href="{{ $ppdb->link }}" class="btn btn-success mt-4">Daftar Sekarang</a>
+                        @else
+                            <a href="#" class="btn btn-secondary mt-4 disabled" tabindex="-1" aria-disabled="true">Daftar Sekarang</a>
+                        @endif
+        
                         <a href="{{ route('ppdb.edit', $ppdb->id) }}" class="btn btn-warning w-100 mt-2">Edit</a>
                     </div>
                 </div>
                 <hr>
             @endforeach
         </div>
+        
 
         <!-- Bagian List PPDB -->
         <div class="mb-4">

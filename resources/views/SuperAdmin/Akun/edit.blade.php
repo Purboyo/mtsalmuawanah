@@ -43,7 +43,7 @@
             <label for="image">Foto</label>
             <input type="file" class="form-control" id="image" name="image">
             @if($akun->image)
-                <img src="{{ asset('uploads/' . $akun->image) }}" alt="Foto" width="100" class="mt-2">
+                <img src="{{ asset( $akun->image) }}" alt="Foto" width="100" class="mt-2">
             @endif
             @error('image')
                 <small style="color: red">{{ $message }}</small>

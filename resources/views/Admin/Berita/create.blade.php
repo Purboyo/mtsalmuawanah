@@ -67,6 +67,7 @@
                     @error('link')
                     <small style="color: red">{{ $message }}</small>
                     @enderror
+                    <p>Masukan link berita jika ada!</p>
                 </div>
                 
 

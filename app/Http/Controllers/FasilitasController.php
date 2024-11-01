@@ -76,8 +76,16 @@ class FasilitasController extends Controller
         return redirect('/fasilitas')->with('success', 'Fasilitas Berhasil Diubah');
     }
 
-    public function destroy(Fasilitas $fasilitas)
+    public function destroy($id)
     {
+        // Temukan fasilitas berdasarkan ID
+        $fasilitas = Fasilitas::find($id);
+    
+        // Jika fasilitas tidak ditemukan, kembalikan pesan error
+        if (!$fasilitas) {
+            return redirect('/fasilitas')->with('error', 'Fasilitas tidak ditemukan');
+        }
+    
         // Path lengkap file gambar
         $imagePath = public_path('image/fasilitas/') . $fasilitas->image;
     
@@ -85,9 +93,10 @@ class FasilitasController extends Controller
         if (File::exists($imagePath)) {
             File::delete($imagePath);
         }
-        // Hapus data slider dari database
+    
+        // Hapus data fasilitas dari database
         $fasilitas->delete();
     
-        return redirect('/struktur')->with('success', 'Struktur Organisasi Berhasil Dihapus');        
-    }
+        return redirect('/fasilitas')->with('success', 'Fasilitas Berhasil Dihapus');
+    }    
 }

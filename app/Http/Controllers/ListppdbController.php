@@ -64,8 +64,21 @@ class ListppdbController extends Controller
     }
     
 
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        // Cari data listppdb berdasarkan ID
+        $listppdb = Listppdb::find($id);
+    
+        // Jika data tidak ditemukan, kembalikan pesan error
+        if (!$listppdb) {
+            return redirect()->route('listppdb.index')->with('error', 'Data tidak ditemukan');
+        }
+    
+        // Hapus data dari database
+        $listppdb->delete();
+    
+        // Redirect ke halaman index dengan pesan sukses
+        return redirect()->route('listppdb.index')->with('success', 'List berhasil dihapus!');
     }
+    
 }

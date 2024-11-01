@@ -6,6 +6,11 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
+    protected $routeMiddleware = [
+        // Middleware lain
+        'superadmin' => \App\Http\Middleware\SuperAdminMiddleware::class,
+    ];
+    
     /**
      * The application's global HTTP middleware stack.
      *

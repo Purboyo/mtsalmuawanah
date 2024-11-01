@@ -40,11 +40,15 @@
                 {{-- edit Status --}}
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <input type="text" class="form-control" id="status" name="status" placeholder="Masukkan Judul" value="{{ $ppdb->status }}">
+                    <select class="form-control" id="status" name="status">
+                        <option value="Dibuka" {{ $ppdb->status == 'Dibuka' ? 'selected' : '' }}>Dibuka</option>
+                        <option value="Ditutup" {{ $ppdb->status == 'Ditutup' ? 'selected' : '' }}>Ditutup</option>
+                    </select>
                     @error('status')
                     <small style="color: red">{{ $message }}</small>
                     @enderror
                 </div>
+
                 {{-- edit Link --}}
                 <div class="form-group">
                     <label for="link">Link</label>

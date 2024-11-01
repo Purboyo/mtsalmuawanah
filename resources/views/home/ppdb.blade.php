@@ -40,8 +40,11 @@
             </ul>
 
             <!-- Registration Link -->
-            <a href="{{$ppdb->link}}" class="btn btn-success mt-4">Daftar Sekarang</a>
-          </div>
+            @if ($ppdb->status == 'Dibuka')
+                <a href="{{ $ppdb->link }}" class="btn btn-success mt-4">Daftar Sekarang</a>
+            @else
+                <a href="#" class="btn btn-secondary mt-4 disabled" tabindex="-1" aria-disabled="true">Daftar Sekarang</a>
+            @endif
         </div>
         @endforeach
       </div>

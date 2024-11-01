@@ -13,7 +13,7 @@
 
         <div class="mb-3">
             <label for="judul" class="form-label">Judul</label>
-            <input type="text" class="form-control" id="judul" name="judul" value="{{ $profil->judul }}" required>
+            <input type="text" class="form-control" id="judul" name="judul" value="{{ $profil->judul }}" >
             @error('judul')
             <small style="color: red">{{ $message }}</small>
             @enderror
@@ -21,7 +21,7 @@
 
         <div class="mb-3">
             <label for="subjudul" class="form-label">Subjudul</label>
-            <input type="text" class="form-control" id="subjudul" name="subjudul" value="{{ $profil->subjudul }}" required>
+            <textarea type="text" class="form-control" id="subjudul" name="subjudul" width="500" rows="5" value="" >{{ $profil->subjudul }}</textarea>
             @error('subjudul')
             <small style="color: red">{{ $message }}</small>
             @enderror
@@ -29,7 +29,7 @@
 
         <div class="mb-3">
             <label for="sejarahsingkat" class="form-label">Sejarah Singkat</label>
-            <textarea class="form-control" id="sejarahsingkat" name="sejarahsingkat" required>{{ $profil->sejarahsingkat }}</textarea>
+            <textarea class="form-control" id="sejarahsingkat" name="sejarahsingkat" width="500" rows="5">{{ $profil->sejarahsingkat }}</textarea>
             @error('sejarahsingakat')
             <small style="color: red">{{ $message }}</small>
             @enderror
@@ -37,7 +37,7 @@
 
         <div class="mb-3">
             <label for="list1" class="form-label">Program 1</label>
-            <input type="text" class="form-control" id="list1" name="list1" value="{{ $profil->list1 }}" required>
+            <input type="text" class="form-control" id="list1" name="list1" value="{{ $profil->list1 }}" >
             @error('list1')
             <small style="color: red">{{ $message }}</small>
             @enderror
@@ -61,7 +61,7 @@
 
         <div class="mb-3">
             <label for="penutup" class="form-label">Penutup</label>
-            <textarea class="form-control" id="penutup" name="penutup" required>{{ $profil->penutup }}</textarea>
+            <textarea class="form-control" id="penutup" name="penutup" width="500" rows="5">{{ $profil->penutup }}</textarea>
             @error('penutup')
             <small style="color: red">{{ $message }}</small>
             @enderror

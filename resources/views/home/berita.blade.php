@@ -38,6 +38,9 @@
                     <p class="text-muted">
                       {{ implode(' ', array_slice(explode(' ', $berita->deskripsisingkat), 0, 100)) }}...
                     </p>
+                    <p class="">
+                      Link : <a href="{{ $berita->link }}" target="_blank" class="text-primary">{{ $berita->link }}</a>
+                    </p>
                     <p >
                       <small>Waktu terbit : {{ $berita->tanggal }}</small>
                     </p>
@@ -58,6 +61,9 @@
                     <h5 class="fw-bold">{{ $berita->judul }}</h5>
                     <p class="text-muted">
                       {{ implode(' ', array_slice(explode(' ', $berita->deskripsisingkat), 0, 100)) }}...
+                    </p>
+                    <p class="">
+                      Link : <a href="{{ $berita->link }}" target="_blank" class="text-primary">{{ $berita->link }}</a>
                     </p>
                     <p >
                       <small>Waktu terbit : <strong>{{ $berita->tanggal }}</strong></small>
