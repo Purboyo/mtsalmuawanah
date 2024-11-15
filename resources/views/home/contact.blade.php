@@ -39,71 +39,34 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-4">
-                      <i
-                        class="fa fa-map-marker-alt fa-2x primary float-start me-4"
-                      ></i>
+                      <i class="fa fa-map-marker-alt fa-2x primary float-start me-4"></i>
                       <h4 class="fw-bolder">Lokasi</h4>
                       <p class="ms-5">
-                        {{ $kontak -> alamat }}
+                        {{ $kontak->alamat }}
                       </p>
                     </div>
                     <div class="col-md-4">
-                      <i
-                        class="fa fa-envelope fa-2x primary float-start me-3"
-                      ></i>
+                      <i class="fa fa-envelope fa-2x primary float-start me-3"></i>
                       <h4 class="fw-bolder">Email</h4>
-                      <p class="ms-5">{{ $kontak -> email }}</p>
+                      <p class="ms-5">
+                        <a  href="https://mail.google.com/mail/?view=cm&fs=1&to={{ $kontak->email }}" target="_blank" class="text-black">{{ $kontak->email }}</a>
+                      </p>
                     </div>
                     <div class="col-md-4">
-                      <i class="fa fa-phone fa-2x primary float-start me-3"></i>
-                      <h4 class="fw-bolder">Telephone</h4>
+                      <i class="fab fa-whatsapp fa-2x primary float-start me-3"></i>
+                      <h4 class="fw-bolder">Whatapps</h4>
                       <p class="ms-5">
-                        {{ $kontak -> phone }}
+                        <a href="https://wa.me/{{ $kontak->phone }}" target="_blank" class="text-black">{{ $kontak->phone }}</a>
                       </p>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {{-- <div class="row mt-5">
-          <div class="col md-12">
-            <div class="card border-0 shadow">
-              <div class="card-body p-4">
-                <div class="row mt-4">
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Nama Pengirim "
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Email Pengirim "
-                    />
-                  </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" placeholder="Subjek">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <textarea name="" id="" class="form-control" placeholder="Pesan Pengirim"></textarea>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <button type="submit" class="btn btn-submit">Kirim</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> --}}
+
       </div>
     </div>
     <!-- end contact -->
