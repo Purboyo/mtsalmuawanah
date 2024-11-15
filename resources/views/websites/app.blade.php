@@ -86,8 +86,10 @@
               <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="../contact">Kontak Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
-            </li>
+              @if(!Auth::check()) <!-- Cek jika pengguna belum login -->
+                <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
+              @endif
+            </li>            
           </ul>
         </div>
       </div>

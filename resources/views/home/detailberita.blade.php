@@ -87,7 +87,9 @@
               <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="../contact">Kontak Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
+              @if(!Auth::check()) <!-- Cek jika pengguna belum login -->
+                <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
+              @endif            
             </li>
           </ul>
         </div>
@@ -111,18 +113,20 @@
       </div>
       <!-- End Breadcumbs -->
       <div class="container mt-5">
-      <a href="/berita" class="btn btn-success mb-3">Kembali</a>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <h2>{{ $berita->judul }}</h2>
-              <p class="text-muted">Diterbitkan pada: <strong>{{ $berita->tanggal }}</strong></p>
-              @if($berita->image)
-              <img src="/image/berita/{{ $berita->image }}" class="img-fluid mb-3 d-block mx-auto" alt="Gambar Berita">
-              @endif
-              <p class="font-weight-bold">{{ $berita->deskripsisingkat }}</p>
-              <p>{{ $berita->deskripsi }}</p>
+        <a href="/berita" class="btn btn-outline-success mb-3">Kembali</a>
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div class="card shadow-lg">
+              <div class="card-body text-center">
+                <h1 class="mb-3">{{ $berita->judul }}</h1>
+                <p class="text-muted">Diterbitkan pada: <strong>{{ $berita->tanggal }}</strong></p>
+                <h5 class="fw-bold mb-4">{{ $berita->deskripsisingkat }}</h5>
+                @if($berita->image)
+                  <img src="/image/berita/{{ $berita->image }}" class="img-fluid rounded mb-4 d-block mx-auto" alt="Gambar Berita">
+                @endif
+                <p>{{ $berita->deskripsi }}</p>
+                <a href="{{ $berita->link }}" target="_blank" class="btn btn-outline-primary mt-4"><strong>Link ...</strong></a>
+              </div>
             </div>
           </div>
         </div>

@@ -11,20 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dokumentasi', function (Blueprint $table) {
+        Schema::create('filter', function (Blueprint $table) {
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_unicode_ci';
             $table->id();
-            $table->string('nama');
-            $table->string('image');
-            $table->unsignedBigInteger('filter_id')->nullable();
-            $table->foreign('filter_id')->references('id')->on('filter')->onDelete('cascade');
+            $table->string('filter');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('dokumentasi');
+        Schema::dropIfExists('filter');
     }
 };

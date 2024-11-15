@@ -318,7 +318,7 @@
         <div class="modal-body">
           <div class="container-fluid bg-body-secondary mb-3">
             <div class="container text-center mb-3">
-              <img src="{{ Auth::user()->image }}" class="img-circle elevation-2" alt="User Image" style="width: 100px; height: 100px;">
+              <img src="{{ Auth::user()->image }}" class="img-circle elevation-2" alt="User Image" style="width: 100px; height: 100px; ">
             </div>
           </div>
           <h5 class="card-title fw-bold mb-3">{{ Auth::user()->name }}</h5>

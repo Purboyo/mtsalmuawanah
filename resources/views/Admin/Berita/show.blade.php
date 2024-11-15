@@ -23,7 +23,7 @@
                     @endif
 
                     {{-- Deskripsi Singkat --}}
-                    <p class="font-weight-bold">{{ $berita->deskripsisingkat }}</p>
+                    <p class="fw-bold">{{ $berita->deskripsisingkat }}</p>
 
                     {{-- Deskripsi Lengkap --}}
                     <p>{{ $berita->deskripsi }}</p>

@@ -22,8 +22,8 @@
     <div class="contact mb-5">
       <div class="maps">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.919284342901!2d108.92670111196081!3d-7.583764874897704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6571184d0fc4af%3A0x7d80a15482ab9d89!2sMTS%20Al-Mu&#39;awanah!5e0!3m2!1sid!2sid!4v1730261468195!5m2!1sid!2sid"
-          width="100%"
+        src = "{!! $kontak -> maps!!}"
+        width="100%"
           height="450"
           style="border: 0"
           allowfullscreen=""

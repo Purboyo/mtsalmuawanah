@@ -17,22 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::insert([
-            [
-                'name' =>'SuperAdmin',
-                'email' => 'SuperAdmin@gmail.com',
-                'password' => 'AdminSuper123',
-                'role' => 'SuperAdmin',
-                'image' => '/image/users/SuperAdmin.jpg',
-            ],
-            [
-                'name' =>'Purboyo',
-                'email' => 'brotoumbaranp@gmail.com',
-                'password' => '123',
-                'role' => 'Admin',
-                'image' => '/image/users/purboyo.jpg',
-            ]
-        ]);
 
         $this->call([
             AddppdbSeeder::class,
@@ -56,7 +40,7 @@ class DatabaseSeeder extends Seeder
             StatistikSeeder::class,
             VisiSeeder::class,
             StrukturSeeder::class,
-
+            UserSeeder::class,
         ]);
     }
 }

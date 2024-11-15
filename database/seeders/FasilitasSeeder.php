@@ -42,7 +42,7 @@ class FasilitasSeeder extends Seeder
                 'nama'=> 'Lapangan',
                 'jumlah'=> 1,
                 'konten' => 'Ini Lapangan',
-                'image' => 'Fasilitas20240917041938_QV25q32D.JPG'
+                'image' => 'Fasilitas20241101020515_mR9BLcYj.jpg'
         ]]);
     }
 }

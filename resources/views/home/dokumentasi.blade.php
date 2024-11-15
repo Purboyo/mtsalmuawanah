@@ -89,8 +89,9 @@
               <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="../contact">Kontak Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
-            </li>
+              @if(!Auth::check()) <!-- Cek jika pengguna belum login -->
+                <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
+              @endif            </li>
           </ul>
         </div>
       </div>
@@ -143,7 +144,7 @@
                                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
                                       <div class="modal-body">
-                                          <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid">
+                                          <img src="{{ asset('image/dokumentasi/' . $item->image) }}" alt="{{ $item->nama }}" class="img-fluid" style="max-height: 80vh; max-width: 80vh; width: 100%; object-fit: cover;">
                                       </div>
                                   </div>
                               </div>
