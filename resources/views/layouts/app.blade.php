@@ -254,6 +254,15 @@
               </p>
             </a>
           </li>
+          {{-- Link --}}
+          <li class="nav-item @if(in_array($currentSegment, ['Link'])) menu-open @else menu-close @endif">
+            <a href="{{route('Link.index')}}" class="nav-link">
+                <i class="nav-icon fa fa-link"></i>
+              <p>
+                Link
+              </p>
+            </a>
+          </li>
           {{-- Logout --}}
           <li class="nav-item">
             <a href="/logout" class="nav-link">

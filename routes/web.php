@@ -13,6 +13,7 @@ use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakKontroller;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\SlidersController;
 use App\Http\Controllers\ListppdbController;
 use App\Http\Controllers\OrganisasiController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\VisiMisiController;
 use App\Models\Filter;
 use App\Models\SuperAdmin;
 use Illuminate\Support\Facades\Route;
+use League\CommonMark\Extension\CommonMark\Renderer\Inline\LinkRenderer;
 
 // Website
 Route::get('/', [HomeController::class, 'index']);
@@ -90,5 +92,6 @@ Route::resource('Berita', BeritaController::class)->middleware('auth');
 Route::resource('Dokumentasi', DokumentasiController::class)->middleware('auth');
 Route::resource('filter', FilterController::class)->middleware('auth');
 Route::resource('Kontak', KontakKontroller::class)->middleware('auth');
+Route::resource('Link', LinkController::class)->middleware('auth');
 
 

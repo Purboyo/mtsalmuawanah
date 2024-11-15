@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             FasilitasSeeder::class,
             FilterSeeder::class,
             KontakSeeder::class,
+            LinkSeeder::class,
             ListppdbSeeder::class,
             MisiSeeder::class,
             OrganisasiSeeder::class,

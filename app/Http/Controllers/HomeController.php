@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Link;
 use App\Models\AddPPDB;
 use App\Models\Berita;
 use App\Models\Deskripsi;
 use App\Models\Dokumentasi;
 use App\Models\Ekstrakurikuler;
-use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Sambutan;
 use App\Models\Statistik;
@@ -36,33 +36,38 @@ class HomeController extends Controller
         $profils = Profil::first();
         $misis = Misi::all();
         $beritas = Berita::orderBy('updated_at', 'desc')->take(3)->get();
-        return view('home.index', compact('sliders','sambutans','statistiks', 'visis', 'profils', 'misis', 'beritas'));
+        $links = Link::first();
+        return view('home.index', compact('sliders', 'sambutans', 'statistiks', 'visis', 'profils', 'misis', 'beritas', 'links'));
     }
 
     public function contact()
     {
         $kontak = Kontak::first();
-        return view('home.contact', compact('kontak'));
+        $links = Link::first();
+        return view('home.contact', compact('kontak', 'links'));
     }
 
     public function dokumentasi()
     {
         $dokumentasi = Dokumentasi::all();
         $filters = Filter::all();
-        return view('home.dokumentasi', compact('dokumentasi', 'filters'));
+        $links = Link::first();
+        return view('home.dokumentasi', compact('dokumentasi', 'filters', 'links'));
     }
 
     public function berita()
     {
         $beritas = Berita::orderBy('updated_at', 'desc')->get();
-        return view('home.berita', compact('beritas'));
+        $links = Link::first();
+        return view('home.berita', compact('beritas', 'links'));
     }
 
     public function organisasi()
     {
-        $organisasis =Organisasi::all();
+        $organisasis = Organisasi::all();
         $ekstrakurikulers = Ekstrakurikuler::all();
-        return view('home.organisasi', compact('organisasis', 'ekstrakurikulers'));
+        $links = Link::first();
+        return view('home.organisasi', compact('organisasis', 'ekstrakurikulers', 'links'));
     }
 
     public function sejarah()
@@ -72,25 +77,29 @@ class HomeController extends Controller
         $misis = Misi::all();
         $deskripsis = Deskripsi::first();
         $sejarahs = Sejarah::first();
-        return view('home.sejarah', compact('visis', 'profils','misis', 'deskripsis','sejarahs'));
+        $links = Link::first();
+        return view('home.sejarah', compact('visis', 'profils', 'misis', 'deskripsis', 'sejarahs', 'links'));
     }
 
     public function struktur()
     {
         $strukturs = Struktur::all();
-        return view('home.struktur', compact('strukturs'));
+        $links = Link::first();
+        return view('home.struktur', compact('strukturs', 'links'));
     }
-    
+
     public function fasilitas()
     {
         $fasilitass = Fasilitas::all();
-        return view('home.fasilitas', compact('fasilitass')); 
+        $links = Link::first();
+        return view('home.fasilitas', compact('fasilitass', 'links'));
     }
 
     public function p5ra()
     {
         $p5ras = p5ra::all();
-        return view('home.p5ra', compact('p5ras')); 
+        $links = Link::first();
+        return view('home.p5ra', compact('p5ras', 'links'));
     }
 
     public function ppdb()
@@ -98,17 +107,21 @@ class HomeController extends Controller
         $ppdbs = PPDB::all();
         $lists = Listppdb::all();
         $addppdbs = AddPPDB::all();
-        return view('home.ppdb', compact('ppdbs', 'lists', 'addppdbs')); 
+        $links = Link::first();
+        return view('home.ppdb', compact('ppdbs', 'lists', 'addppdbs', 'links'));
     }
 
     public function prestasi()
     {
         $prestasis = Prestasi::all();
-        return view('home.prestasi', compact('prestasis')); 
+        $links = Link::first();
+        return view('home.prestasi', compact('prestasis', 'links'));
     }
 
-    public function detailberita($id){
+    public function detailberita($id)
+    {
         $berita = Berita::find($id);
-        return view('home.detailberita', compact('berita'));
+        $links = Link::first();
+        return view('home.detailberita', compact('berita', 'links'));
     }
 }

@@ -174,10 +174,10 @@
             <!-- Social Links -->
             <div class="col-md-6 text-center text-md-end">
               <div class="social-links">
-                <a href="https://www.facebook.com/mts.almuawanah.3/" target="_blank" class="mx-2"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="https://www.instagram.com/mts_almuawanah_cilacap?igsh=cWVhZHc0Y2Zvc3Jl"  target="_blank"  class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="https://www.youtube.com/@MTsAl-MuawanahKawunganten"  target="_blank"  class="mx-2"><i class="fab fa-youtube fa-2x"></i></a>
-                <a href="https://wa.me/81225218812"  target="_blank"  class="mx-2"><i class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="{{$links->facebook}}" target="_blank" class="mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="{{$links->instagram}}"  target="_blank"  class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="{{$links->youtube}}"  target="_blank"  class="mx-2"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="{{$links->whatsapp}}"  target="_blank"  class="mx-2"><i class="fab fa-whatsapp fa-2x"></i></a>
               </div>
             </div>
           </div>
