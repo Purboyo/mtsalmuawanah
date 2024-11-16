@@ -117,14 +117,14 @@
         <div class="row justify-content-center">
           <div class="col-md-12">
             <div class="card shadow-lg">
-              <div class="card-body text-center">
+              <div class="card-body">
                 <h1 class="mb-3">{{ $berita->judul }}</h1>
                 <p class="text-muted">Diterbitkan pada: <strong>{{ $berita->tanggal }}</strong></p>
-                <h5 class="fw-bold mb-4">{{ $berita->deskripsisingkat }}</h5>
+                <h5 class="fw-bold mb-4">{!! Markdown::convertToHtml ($berita->deskripsisingkat) !!}</h5>
                 @if($berita->image)
                   <img src="/image/berita/{{ $berita->image }}" class="img-fluid rounded mb-4 d-block mx-auto" alt="Gambar Berita">
                 @endif
-                <p>{{ $berita->deskripsi }}</p>
+                <p>{{$berita->deskripsi}}</p>
                 <a href="{{ $berita->link }}" target="_blank" class="btn btn-outline-primary mt-4"><strong>Link ...</strong></a>
               </div>
             </div>

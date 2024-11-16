@@ -19,10 +19,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
   <!-- Include Custom CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/style2.css') }}" />
-  <style>
-
-
-  </style>
+  @yield('head')
 </head>
 <body class="hold-transition sidebar-mini">
   @php

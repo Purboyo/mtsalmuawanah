@@ -5,6 +5,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeskripsiController;
 use App\Http\Controllers\DokumentasiController;
@@ -94,4 +95,6 @@ Route::resource('filter', FilterController::class)->middleware('auth');
 Route::resource('Kontak', KontakKontroller::class)->middleware('auth');
 Route::resource('Link', LinkController::class)->middleware('auth');
 
+// CKEditor
+Route::post('/ckeditor/upload', [CKEditorController::class, 'upload'])->name('ckeditor.upload');
 
