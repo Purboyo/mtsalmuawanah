@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-    <a href="{{ route('Berita.index') }}" class="btn btn-success mb-3">Kembali</a>
+    <a href="{{ route('AdminBerita.index') }}" class="btn btn-success mb-3">Kembali</a>
 
     <div class="row">
         <div class="col-md-12">
@@ -26,7 +26,7 @@
                     <p class="fw-bold">{{ $berita->deskripsisingkat }}</p>
 
                     {{-- Deskripsi Lengkap --}}
-                    <p>{{ $berita->deskripsi }}</p>
+                    <p>{!! Markdown::convertToHtml(e( $berita->deskripsi)) !!}</p>
                 </div>
             </div>
         </div>

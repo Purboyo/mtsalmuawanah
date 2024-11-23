@@ -4,10 +4,10 @@
 
 @section('content')
 <div class="container">
-    <a href="{{ route('Berita.index') }}" class="btn btn-success mb-3">Kembali</a>
+    <a href="{{ route('AdminBerita.index') }}" class="btn btn-success mb-3">Kembali</a>
     <div class="row">
         <div class="col-md-12">
-            <form action="{{ route('Berita.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('AdminBerita.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <!-- Judul Berita -->
                 <div class="form-group">
@@ -29,17 +29,17 @@
 
                 <!-- Deskripsi Singkat -->
                 <div class="form-group">
-                    <label for="deskripsisingkat">Deskripsi Singkat</label>
-                    <textarea class="form-control" id="deskripsisingkat" name="deskripsisingkat" rows="2" placeholder="Masukkan Deskripsi Singkat"></textarea>
-                    @error('deskripsisingkat')
-                        <small class="text-danger">{{ $message }}</small>
+                    <label for="deskripsi">Deskripsi Singkat Berita</label>
+                    <textarea class="form-control" id="deskripsisingkat" name="deskripsisingkat" rows="5" placeholder="Masukan Isi Berita"></textarea>
+                    @error('deskripsi')
+                      <small style="color: red">{{ $message }}</small>
                     @enderror
-                </div>
+                  </div>
 
                 <!-- Deskripsi Lengkap -->
                 <div class="form-group">
                     <label for="deskripsi">Isi Berita</label>
-                    <textarea class="form-control" id="markdown" name="deskripsi" rows="5" placeholder="Masukan Isi Berita"></textarea>
+                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" placeholder="Masukan Isi Berita"></textarea>
                     @error('deskripsi')
                         <small style="color: red">{{ $message }}</small>
                     @enderror
@@ -75,12 +75,17 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new EasyMDE({ element: document.querySelector("textarea[name='deskripsi']")})
+    });
+</script>
 
 
 @endsection
-<!-- Tambahkan di dalam section 'head' -->
 @section('head')
-<script src="{{ mix('js/app.js') }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
 @endsection
 
 

@@ -295,6 +295,26 @@ a {
   width: 50%;
   height: auto;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 30px; /* Jarak dari bawah */
+  right: 30px;  /* Jarak dari kanan */
+  background-color: #07bf07; /* Warna latar belakang */
+  color: white; /* Warna ikon */
+  border-radius: 50%; /* Bulat sempurna */
+  width: 50px;  /* Lebar tombol */
+  height: 50px; /* Tinggi tombol */
+  display: flex;
+  justify-content: center; /* Tengah secara horizontal */
+  align-items: center; /* Tengah secara vertikal */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Bayangan */
+  transition: background-color 0.3s; /* Transisi saat hover */
+}
+
+.back-to-top:hover {
+  background-color: #444; /* Warna saat hover */
+}
+
 
 
 @media (max-width:768px) {

@@ -42,7 +42,7 @@ class BeritaController extends Controller
         
         Berita::create($input);
         
-        return redirect('/Berita')->with('success', 'Berita Berhasil Ditambahkan');
+        return redirect('/AdminBerita')->with('success', 'Berita Berhasil Ditambahkan');
         
     }
 
@@ -84,7 +84,7 @@ class BeritaController extends Controller
     
         $berita->update($input);
     
-        return redirect('/Berita')->with('success', 'Berita Berhasil Diperbarui');
+        return redirect('/AdminBerita')->with('success', 'Berita Berhasil Diperbarui');
     }
     
 
@@ -104,7 +104,7 @@ class BeritaController extends Controller
         // Hapus data berita dari database
         $berita->delete();
     
-        return redirect('/Berita')->with('success', 'Berita Berhasil Dihapus');
+        return redirect('/AdminBerita')->with('success', 'Berita Berhasil Dihapus');
     }
     
     

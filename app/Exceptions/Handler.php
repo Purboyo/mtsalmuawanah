@@ -2,11 +2,15 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+
     /**
      * The list of the inputs that are never flashed to the session on validation exceptions.
      *
@@ -17,6 +21,7 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
 
     /**
      * Register the exception handling callbacks for the application.

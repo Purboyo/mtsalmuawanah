@@ -38,7 +38,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/sejarahalmuawanah', [HomeController::class, 'sejarah']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/organisasi', [HomeController::class, 'organisasi']);
-Route::get('/berita', [HomeController::class, 'berita']);
+Route::get('/beritaterkini', [HomeController::class, 'berita']);
 Route::get('/detailberita/{id}', [HomeController::class, 'detailberita']);
 Route::get('/strukturorganisasi', [HomeController::class, 'struktur']);
 Route::get('/dokumentasi', [HomeController::class, 'dokumentasi']);
@@ -84,17 +84,15 @@ Route::resource('Ekstrakurikuler', EkstrakurikulerController::class)->middleware
 Route::resource('SuperAdmin', SuperAdminController::class)->middleware('auth');
 Route::resource('akun', AkunController::class)->middleware('auth');
 Route::middleware('superadmin')->group(function () {
-    Route::get('/SuperAdmin', [SuperAdminController::class, 'index']);
+Route::get('/SuperAdmin', [SuperAdminController::class, 'index']);
 });
 
 
 // Admin Lainya
-Route::resource('Berita', BeritaController::class)->middleware('auth');
+Route::resource('AdminBerita', BeritaController::class)->middleware('auth');
 Route::resource('Dokumentasi', DokumentasiController::class)->middleware('auth');
 Route::resource('filter', FilterController::class)->middleware('auth');
 Route::resource('Kontak', KontakKontroller::class)->middleware('auth');
 Route::resource('Link', LinkController::class)->middleware('auth');
 
-// CKEditor
-Route::post('/ckeditor/upload', [CKEditorController::class, 'upload'])->name('ckeditor.upload');
 

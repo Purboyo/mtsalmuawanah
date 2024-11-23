@@ -226,7 +226,7 @@
           </li>
           {{-- Berita --}}
           <li class="nav-item @if(in_array($currentSegment, ['Berita'])) menu-open @else menu-close @endif">
-            <a href="{{route('Berita.index')}}" class="nav-link">
+            <a href="{{route('AdminBerita.index')}}" class="nav-link">
                 <i class="nav-icon fa-regular fa-newspaper"></i>
               <p>
                 Berita
@@ -375,6 +375,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <!-- lightbox2 JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
 
 <script>
     $(document).ready(function() {

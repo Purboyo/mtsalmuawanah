@@ -5,10 +5,10 @@
 @section('content')
 
 <div class="container">
-    <a href="{{ route('Berita.index') }}" class="btn btn-success mb-3">Kembali</a>
+    <a href="{{ route('AdminBerita.index') }}" class="btn btn-success mb-3">Kembali</a>
     <div class="row">
         <div class="col-md-12">
-            <form action="{{ route('Berita.update', $berita->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('AdminBerita.update', $berita->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -85,4 +85,15 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new EasyMDE({ element: document.querySelector("textarea[name='deskripsi']")})
+    });
+</script>
+
+
+@endsection
+@section('head')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
 @endsection

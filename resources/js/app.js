@@ -29,3 +29,4 @@ function onPointerDown(event) {
 
 // Mengganti penggunaan deprecated dengan eventsDeprecated
 app.renderer.eventsDeprecated.on('pointerdown', onPointerDown);
+

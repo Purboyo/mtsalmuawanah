@@ -77,7 +77,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('berita', ) ? 'active' : '' }}" href="../berita">Berita</a>
+              <a class="nav-link fw-bold {{ Request::is('berita', ) ? 'active' : '' }}" href="../beritaterkini">Berita</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold {{ Request::is('dokumentasi', ) ? 'active' : '' }}" href="../dokumentasi">Dokumentasi</a>
@@ -156,11 +156,12 @@
 
 
 
-    <!-- to top -->
-    <a href="#" class="back-to-top p-3">
-      <i class="fa-solid fa-chevron-up"></i>
-    </a>
-    <!-- end to top -->
+      <!-- to top -->
+      <a href="#" class="back-to-top rounded-circle p-3" id="backToTop">
+        <i class="fa-solid fa-chevron-up"></i>
+      </a>
+      <!-- end to top -->
+
 
     <!-- jQuery -->
     <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>

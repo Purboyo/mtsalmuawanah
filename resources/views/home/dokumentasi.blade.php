@@ -80,7 +80,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="../berita">Berita</a>
+              <a class="nav-link fw-bold" href="../beritaterkini">Berita</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold {{ Request::is('dokumentasi', ) ? 'active' : '' }}" href="../dokumentasi">Dokumentasi</a>
@@ -158,40 +158,59 @@
 
     <!-- Footer -->
     <footer class="mt-5">
-        <div class="footer-top bg-dark text-white py-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-3 text-center mb-4 mb-md-0">
-                        <h4 class="fw-bold">MADRASAH</h4>
-                        <p>Tsanawiyah Al-Mu'Awanah Kawunganten</p>
-                        <strong>Telephone:</strong> <span>+628123456789</span><br>
-                        <strong>Email:</strong> <span>EmailMadrasah@gmail.com</span>
-                    </div>
-                </div>
+      <div class="footer-top bg-dark text-white py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <!-- Info Madrasah -->
+            <div class="col-md-3 text-center mb-4 mb-md-0">
+              <h4 class="fw-bold">MADRASAH</h4>
+              <p>Tsanawiyah Al-Mu'Awanah Kawunganten</p>
+              <strong>Telephone:</strong> <span>+628123456789</span><br>
+              <strong>Email:</strong> <span>EmailMadrasah@gmail.com</span>
             </div>
+            <!-- Links Section -->
+            <div class="col-md-3 text-center">
+              <h4 class="fw-bold">Useful Links</h4>
+              <ul class="list-unstyled">
+                <li><a href="/" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Beranda</a></li>
+                <li><a href="sejarahalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Profil</a></li>
+                <li><a href="ppdbmtsalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> PPDB</a></li>
+                <li><a href="berita" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Berita</a></li>
+                <li><a href="dokumentasi" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Dokumentasi</a></li>
+                <li><a href="contact" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Kontak Kami</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="footer-down bg-darker text-white py-3">
-          <div class="container">
-            <div class="row align-items-center">
-              <!-- Copyright -->
-              <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                <div>&copy; <strong>MTS Al-Mu'Awanah</strong>. All Rights Reserved</div>
-                <div>Designed by Purboyo Broto Umbaran</div>
-              </div>
-              <!-- Social Links -->
-              <div class="col-md-6 text-center text-md-end">
-                <div class="social-links">
-                  <a href="{{$links->facebook}}" target="_blank" class="mx-2"><i class="fab fa-facebook fa-2x"></i></a>
-                  <a href="{{$links->instagram}}"  target="_blank"  class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
-                  <a href="{{$links->youtube}}"  target="_blank"  class="mx-2"><i class="fab fa-youtube fa-2x"></i></a>
-                  <a href="{{$links->whatsapp}}"  target="_blank"  class="mx-2"><i class="fab fa-whatsapp fa-2x"></i></a>
-                </div>
+      </div>
+
+      <div class="footer-down bg-darker text-white py-3">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Copyright -->
+            <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+              <div>&copy; <strong>MTS Al-Mu'Awanah</strong>. All Rights Reserved</div>
+              <div>Designed by Purboyo Broto Umbaran</div>
+            </div>
+            <!-- Social Links -->
+            <div class="col-md-6 text-center text-md-end">
+              <div class="social-links">
+                <a href="{{$links->facebook}}" target="_blank" class="mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="{{$links->instagram}}"  target="_blank"  class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="{{$links->youtube}}"  target="_blank"  class="mx-2"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="{{$links->whatsapp}}"  target="_blank"  class="mx-2"><i class="fab fa-whatsapp fa-2x"></i></a>
               </div>
             </div>
           </div>
         </div>
-    </footer>
-    <!-- End Footer -->
+      </div>
+      </footer>
+      <!-- End Footer -->
+        <!-- to top -->
+        <a href="#" class="back-to-top rounded-circle p-3" id="backToTop">
+          <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <!-- end to top -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

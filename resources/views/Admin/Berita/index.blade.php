@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ route('Berita.create') }}" class="btn btn-success mb-3">
+        <a href="{{ route('AdminBerita.create') }}" class="btn btn-success mb-3">
             <i class="fa fa-plus"></i> Tambah Data
         </a>
 
@@ -29,9 +29,9 @@
                             <p>Link : <a href="{{ $item->link }}" target="_blank"><strong>{{ $item->link }}</strong></a></p>
                         </div>
                         <div class="card-footer d-flex justify-content-between">
-                            <a href="{{ route('Berita.show', $item->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
-                            <a href="{{ route('Berita.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
-                            <form action="{{ route('Berita.destroy', $item->id) }}" method="POST" class="d-inline">
+                            <a href="{{ route('AdminBerita.show', $item->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
+                            <a href="{{ route('AdminBerita.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
+                            <form action="{{ route('AdminBerita.destroy', $item->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i> Hapus </button>

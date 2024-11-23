@@ -78,7 +78,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold active" href="../berita">Berita</a>
+              <a class="nav-link fw-bold active" href="../beritaterkini">Berita</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold {{ Request::is('dokumentasi', ) ? 'active' : '' }}" href="../dokumentasi">Dokumentasi</a>
@@ -113,7 +113,7 @@
       </div>
       <!-- End Breadcumbs -->
       <div class="container mt-5">
-        <a href="/berita" class="btn btn-outline-success mb-3">Kembali</a>
+        <a href="/beritaterkini" class="btn btn-outline-success mb-3">Kembali</a>
         <div class="row justify-content-center">
           <div class="col-md-12">
             <div class="card shadow-lg">
@@ -124,7 +124,7 @@
                 @if($berita->image)
                   <img src="/image/berita/{{ $berita->image }}" class="img-fluid rounded mb-4 d-block mx-auto" alt="Gambar Berita">
                 @endif
-                <p>{{$berita->deskripsi}}</p>
+                <p>{!! Markdown::convertToHtml ($berita->deskripsi) !!}</p>
                 <a href="{{ $berita->link }}" target="_blank" class="btn btn-outline-primary mt-4"><strong>Link ...</strong></a>
               </div>
             </div>
@@ -186,10 +186,11 @@
       </footer>
       <!-- End Footer -->
 
-    <!-- Back to top -->
-    <a href="#" class="back-to-top p-3">
+    <!-- to top -->
+    <a href="#" class="back-to-top rounded-circle p-3" id="backToTop">
       <i class="fa-solid fa-chevron-up"></i>
     </a>
+    <!-- end to top -->
 
     <!-- JS Libraries -->
     <script src="{{ asset('assets/vendor/jquery/jquery-3.7.1.min.js') }}"></script>
