@@ -37,3 +37,10 @@
 .modal-body h6 {
   font-weight: bold;
 }
+
+.dropdown-item.active {
+  font-weight: bold;
+  color: green; /* Mengubah warna teks menjadi hijau */
+  background-color: transparent; /* Warna latar belakang (bisa disesuaikan) */
+}
+

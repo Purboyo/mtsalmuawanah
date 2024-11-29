@@ -19,7 +19,7 @@
   </head>
   <body class="body">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-3">
       <div class="container">
         <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo MTS Al-Mu'awanah" class="logo" />
         <a class="navbar-brand fw-bold" href="#">

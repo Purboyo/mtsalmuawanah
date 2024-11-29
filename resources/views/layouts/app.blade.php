@@ -225,7 +225,7 @@
             </ul>
           </li>
           {{-- Berita --}}
-          <li class="nav-item @if(in_array($currentSegment, ['Berita'])) menu-open @else menu-close @endif">
+          <li class="nav-item @if(in_array($currentSegment, ['AdminBerita'])) menu-open @else menu-close @endif">
             <a href="{{route('AdminBerita.index')}}" class="nav-link">
                 <i class="nav-icon fa-regular fa-newspaper"></i>
               <p>

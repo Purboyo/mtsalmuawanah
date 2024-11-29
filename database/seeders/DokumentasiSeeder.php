@@ -17,18 +17,22 @@ class DokumentasiSeeder extends Seeder
             [
                 'nama' => 'Dokumentasi 1',
                 'image' => 'Dokumentasi_20241028142117_K41tg4hl.jpg',
+                'filter_id' => 1,
             ],
             [
                 'nama' => 'Dokumentasi 2',
                 'image' => 'Dokumentasi_20241028142130_n0fw8OAs.jpg',
+                'filter_id' => 1,
             ],
             [
                 'nama' => 'Dokumentasi 3',
                 'image' => 'Dokumentasi_20241028142157_sSUxuNdP.jpg',
+                'filter_id' => 1,
             ],
             [
                 'nama' => 'Dokumentasi 4',
                 'image' => 'Dokumentasi_20241028142212_rv3FMor2.jpg',
+                'filter_id' => 2,
             ]
         ]);
     }

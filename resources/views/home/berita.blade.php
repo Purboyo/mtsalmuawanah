@@ -36,8 +36,8 @@
                   <div class="card-body d-flex flex-column justify-content-center">
                     <h5 class="fw-bold">{{ $berita->judul }}</h5>
                     <p class="text-muted">
-                      {{ implode(' ', array_slice(explode(' ', $berita->deskripsisingkat), 0, 100)) }}...
-                    </p>
+                      {!! \Illuminate\Support\Str::limit(Markdown::convertToHtml($berita->deskripsisingkat), 300) !!}
+                    </p>                                    
                     <p class="">
                       Link : <a href="{{ $berita->link }}" target="_blank" class="text-primary">{{ $berita->link }}</a>
                     </p>
@@ -60,7 +60,7 @@
                   <div class="card-body d-flex flex-column justify-content-center">
                     <h5 class="fw-bold">{{ $berita->judul }}</h5>
                     <p class="text-muted">
-                      {{ implode(' ', array_slice(explode(' ', $berita->deskripsisingkat), 0, 100)) }}...
+                      {!! \Illuminate\Support\Str::limit(Markdown::convertToHtml($berita->deskripsisingkat), 250) !!}
                     </p>
                     <p class="">
                       Link : <a href="{{ $berita->link }}" target="_blank" class="text-primary">{{ $berita->link }}</a>

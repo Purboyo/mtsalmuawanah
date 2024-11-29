@@ -13,88 +13,94 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" />
     <!-- AOS -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/aos/dist/aos.css') }}" />
+    <!-- Custom CSS2 -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style2.css') }}" />
   </head>
   <body class="body">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-      <div class="container">
-        <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo MTS Al-Mu'awanah" class="logo" />
-        <a class="navbar-brand fw-bold" href="#">
-          <span class="primary">MTS</span> AL-MU'AWANAH
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('/') ? 'active' : '' }}" href="../">Beranda</a>
-            </li>
-            <!-- Dropdown Profil -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link fw-bold dropdown-toggle {{ Request::is('sejarahalmuawanah', 'strukturorganisasi', 'fasilitasmadrasah') ? 'active' : '' }}"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Profil
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../sejarahalmuawanah">Sejarah</a></li>
-                <li><a class="dropdown-item" href="../strukturorganisasi">Struktur Organisasi</a></li>
-                <li><a class="dropdown-item" href="../fasilitasmadrasah">Fasilitas</a></li>
-              </ul>
-            </li>
-            <!-- PPDB -->
-            <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('ppdbmtsalmuawanah') ? 'active' : '' }}" href="../ppdbmtsalmuawanah">PPDB</a>
-            </li>
-            <!-- Pendidikan Dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link fw-bold dropdown-toggle {{ Request::is('prestasi', 'p5ra', 'organisasi') ? 'active' : '' }}"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Pendidikan
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../prestasi">Prestasi</a></li>
-                <li><a class="dropdown-item" href="../p5ra">P5RA</a></li>
-                <li><a class="dropdown-item" href="../organisasi">Organisasi dan Ekstrakurikuler</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('berita', ) ? 'active' : '' }}" href="../beritaterkini">Berita</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('dokumentasi', ) ? 'active' : '' }}" href="../dokumentasi">Dokumentasi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="../contact">Kontak Kami</a>
-            </li>
-            <li class="nav-item">
-              @if(!Auth::check()) <!-- Cek jika pengguna belum login -->
-                <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
-              @endif
-            </li>            
-          </ul>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-3">
+    <div class="container">
+      <!-- Logo -->
+      <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo MTS Al-Mu'awanah" class="logo" />
+      <a class="navbar-brand fw-bold" href="#">
+        <span class="primary">MTS</span> AL-MU'AWANAH
+      </a>
+      <!-- Toggle Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-bold {{ Request::is('/') ? 'active' : '' }}" href="../">Beranda</a>
+          </li>
+          <!-- Dropdown Profil -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link fw-bold dropdown-toggle {{ Request::is('sejarahalmuawanah', 'strukturorganisasi', 'fasilitasmadrasah') ? 'active' : '' }}"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Profil
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item {{ Request::is('sejarahalmuawanah') ? 'active' : '' }}" href="../sejarahalmuawanah">Sejarah</a></li>
+              <li><a class="dropdown-item {{ Request::is('strukturorganisasi') ? 'active' : '' }}" href="../strukturorganisasi">Struktur Organisasi</a></li>
+              <li><a class="dropdown-item {{ Request::is('fasilitasmadrasah') ? 'active' : '' }}" href="../fasilitasmadrasah">Fasilitas</a></li>
+            </ul>
+          </li>
+          <!-- PPDB -->
+          <li class="nav-item">
+            <a class="nav-link fw-bold {{ Request::is('ppdbmtsalmuawanah') ? 'active' : '' }}" href="../ppdbmtsalmuawanah">PPDB</a>
+          </li>
+          <!-- Pendidikan Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link fw-bold dropdown-toggle {{ Request::is('prestasi', 'p5ra', 'organisasi') ? 'active' : '' }}"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Pendidikan
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item {{ Request::is('prestasi') ? 'active' : '' }}" href="../prestasi">Prestasi</a></li>
+              <li><a class="dropdown-item {{ Request::is('p5ra') ? 'active' : '' }}" href="../p5ra">P5RA</a></li>
+              <li><a class="dropdown-item {{ Request::is('organisasi') ? 'active' : '' }}" href="../organisasi">Organisasi dan Ekstrakurikuler</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold {{ Request::is('beritaterkini') ? 'active' : '' }}" href="../beritaterkini">Berita</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold {{ Request::is('dokumentasi') ? 'active' : '' }}" href="../dokumentasi">Dokumentasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold {{ Request::is('contact') ? 'active' : '' }}" href="../contact">Kontak Kami</a>
+          </li>
+          <li class="nav-item">
+            @if(!Auth::check()) <!-- Cek jika pengguna belum login -->
+              <a class="nav-link fw-bold {{ Request::is('login') ? 'active' : '' }}" href="../login">Login <i class="fa fa-user"></i></a>
+            @endif
+          </li>            
+        </ul>
       </div>
-    </nav>
-    <!-- End Navbar -->
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
 
 
     <!-- Main Content -->
@@ -183,5 +189,7 @@
     <script>
       AOS.init();
     </script>
+
+    
 
   </body>

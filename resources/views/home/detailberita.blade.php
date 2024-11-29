@@ -17,7 +17,7 @@
   </head>
   <body class="body">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-3">
       <div class="container">
         <img src="{{ asset('assets/img/logo.jpeg') }}" alt="Logo MTS Al-Mu'awanah" class="logo" />
         <a class="navbar-brand fw-bold" href="#">
@@ -122,7 +122,7 @@
                 <p class="text-muted">Diterbitkan pada: <strong>{{ $berita->tanggal }}</strong></p>
                 <h5 class="fw-bold mb-4">{!! Markdown::convertToHtml ($berita->deskripsisingkat) !!}</h5>
                 @if($berita->image)
-                  <img src="/image/berita/{{ $berita->image }}" class="img-fluid rounded mb-4 d-block mx-auto" alt="Gambar Berita">
+                <img src="/image/berita/{{ $berita->image }}" class="img-fluid rounded mb-4 d-block mx-auto" alt="Gambar Berita" style="max-width: 60%; height: auto;">
                 @endif
                 <p>{!! Markdown::convertToHtml ($berita->deskripsi) !!}</p>
                 <a href="{{ $berita->link }}" target="_blank" class="btn btn-outline-primary mt-4"><strong>Link ...</strong></a>
