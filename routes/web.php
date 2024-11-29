@@ -83,8 +83,9 @@ Route::resource('Ekstrakurikuler', EkstrakurikulerController::class)->middleware
 // SuperAdmin
 Route::resource('SuperAdmin', SuperAdminController::class)->middleware('auth');
 Route::resource('akun', AkunController::class)->middleware('auth');
-Route::middleware('superadmin')->group(function () {
-Route::get('/SuperAdmin', [SuperAdminController::class, 'index']);
+Route::middleware(['auth', 'superadmin'])->group(function () {
+    Route::resource('SuperAdmin', SuperAdminController::class);
+    Route::resource('akun', AkunController::class);
 });
 
 

@@ -32,12 +32,18 @@
                             <i id="eye-icon-{{ $index }}" class="fa fa-eye-slash"></i>
                         </button>
                     </p>
+
+                    @if($user->role !== 'SuperAdmin')
                     <a href="{{ route('akun.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
                     <form action="{{ route('akun.destroy', $user->id) }}" method="POST" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?')"><i class="fa fa-trash"></i> Hapus</button>
                     </form>
+                    @else
+                    <button class="btn btn-warning btn-sm" disabled><i class="fa fa-edit"></i> Edit</button>
+                    <button class="btn btn-danger btn-sm" disabled><i class="fa fa-trash"></i> Hapus</button>
+                    @endif
                 </div>
             </div>
         </div>

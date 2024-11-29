@@ -122,7 +122,7 @@
                 <li><a href="/" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Beranda</a></li>
                 <li><a href="sejarahalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Profil</a></li>
                 <li><a href="ppdbmtsalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> PPDB</a></li>
-                <li><a href="berita" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Berita</a></li>
+                <li><a href="beritaterkini" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Berita</a></li>
                 <li><a href="dokumentasi" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Dokumentasi</a></li>
                 <li><a href="contact" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Kontak Kami</a></li>
               </ul>

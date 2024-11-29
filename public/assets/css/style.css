@@ -112,12 +112,6 @@ a {
   background: #07bf07;
 }
 
-.back-to-top{
-  display: inline !important;
-  position: fixed ;
-  right: 15px;
-  bottom: 15px;
-}
 
 .bg-darker {
   background: #111;
