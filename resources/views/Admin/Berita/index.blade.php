@@ -25,8 +25,7 @@
                                 <img src="{{ asset('image/berita/' . $item->image) }}" alt="{{ $item->image }}" class="img-fluid rounded" width="300">
                             </div>
                             <h5 class="card-title">{{ $item->judul }}</h5>
-                            <p class="card-text">{{ Str::limit($item->deskripsisingkat,30) }}</p>
-                            <p>Link : <a href="{{ $item->link }}" target="_blank"><strong>{{ $item->link }}</strong></a></p>
+                            <p class="card-text">Link : <a href="{{ $item->link }}" target="_blank"><strong>{{ $item->link }}</strong></a></p>
                         </div>
                         <div class="card-footer d-flex justify-content-between">
                             <a href="{{ route('AdminBerita.show', $item->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>

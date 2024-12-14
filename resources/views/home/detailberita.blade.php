@@ -112,25 +112,28 @@
         </div>
       </div>
       <!-- End Breadcumbs -->
+      {{-- Main Content --}}
       <div class="container mt-5">
         <a href="/beritaterkini" class="btn btn-outline-success mb-3">Kembali</a>
         <div class="row justify-content-center">
-          <div class="col-md-12">
-            <div class="card shadow-lg">
-              <div class="card-body">
-                <h1 class="mb-3">{{ $berita->judul }}</h1>
-                <p class="text-muted">Diterbitkan pada: <strong>{{ $berita->tanggal }}</strong></p>
-                <h5 class="fw-bold mb-4">{!! Markdown::convertToHtml ($berita->deskripsisingkat) !!}</h5>
-                @if($berita->image)
-                <img src="/image/berita/{{ $berita->image }}" class="img-fluid rounded mb-4 d-block mx-auto" alt="Gambar Berita" style="max-width: 60%; height: auto;">
-                @endif
-                <p>{!! Markdown::convertToHtml ($berita->deskripsi) !!}</p>
-                <a href="{{ $berita->link }}" target="_blank" class="btn btn-outline-primary mt-4"><strong>Link ...</strong></a>
-              </div>
+            <div class="col-md-12">
+                <div class="card shadow-lg">
+                    <div class="card-body" style="padding: 4%;">
+                        <h1 class="mb-3">{{ $berita->judul }}</h1>
+                        <p class="text-muted">Diterbitkan pada: <strong>{{ $berita->tanggal }}</strong></p>
+                        @if($berita->image)
+                            <img src="/image/berita/{{ $berita->image }}" class="img-fluid rounded mb-4 d-block mx-auto" alt="Gambar Berita" style="max-width: 60%; height: auto;">
+                        @endif
+                        <p>{!! Markdown::convertToHtml($berita->deskripsi) !!}</p>
+                        <a href="{{ $berita->link }}" target="_blank" class="btn btn-outline-primary mt-4"><strong>Link ...</strong></a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
       </div>
+      {{-- End Main Content --}}
+
+
       </div>
     </main>
 
@@ -148,15 +151,15 @@
               <strong>Email:</strong> <span>EmailMadrasah@gmail.com</span>
             </div>
             <!-- Links Section -->
-            <div class="col-md-3 text-center">
+            <div class="col-md-3" style="padding-left: 5%">
               <h4 class="fw-bold">Useful Links</h4>
               <ul class="list-unstyled">
                 <li><a href="/" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Beranda</a></li>
-                <li><a href="../sejarahalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Profil</a></li>
-                <li><a href="../ppdbmtsalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> PPDB</a></li>
-                <li><a href="../beritaterkini" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Berita</a></li>
-                <li><a href="../dokumentasi" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Dokumentasi</a></li>
-                <li><a href="../contact" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Kontak Kami</a></li>
+                <li><a href="sejarahalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Profil</a></li>
+                <li><a href="ppdbmtsalmuawanah" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> PPDB</a></li>
+                <li><a href="beritaterkini" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Berita</a></li>
+                <li><a href="dokumentasi" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Dokumentasi</a></li>
+                <li><a href="contact" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Kontak Kami</a></li>
               </ul>
             </div>
           </div>

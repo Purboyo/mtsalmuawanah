@@ -169,7 +169,7 @@
               <strong>Email:</strong> <span>EmailMadrasah@gmail.com</span>
             </div>
             <!-- Links Section -->
-            <div class="col-md-3 text-center">
+            <div class="col-md-3" style="padding-left: 5%">
               <h4 class="fw-bold">Useful Links</h4>
               <ul class="list-unstyled">
                 <li><a href="/" class="text-decoration-none text-white"><i class="fa fa-chevron-right primary"></i> Beranda</a></li>
